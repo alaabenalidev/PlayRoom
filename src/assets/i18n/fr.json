@@ -1,0 +1,188 @@
+{
+    "HOME": {
+        "Welcome": "Bienvenue au Najehok",
+        "WelcomeDescription": "C'est plus facile avec nous",
+        "TitleCardStudent": "Pour l'étudiant",
+        "TitleCardTeacher": "Pour l'enseigant",
+        "TitleCardParent": "Pour parent"
+    },
+    "NAVBAR": {
+        "Language": "Langage:",
+        "Home": "Accueil",
+        "Notice": "Remarque",
+        "Group": "Groupe",
+        "OwnEvents": "Mes propre évènement",
+        "OwnClasses": "Mes propre classe",
+        "OwnGroup": "Mes propre groupe",
+        "ImMember": "Je suis un membre",
+        "Add": "Ajouter",
+        "Modify": "Modifier",
+        "Delete": "Supprimer",
+        "Classes": "Classes",
+        "Events": "Evènements",
+        "Groups": "Groupes",
+        "About": "A propos",
+        "ContactUs": "Contacter nous",
+        "Login": "Connexion",
+        "Register": "Inscription",
+        "Profile": "Profile",
+        "Logout": "Déconnexion"
+    },
+    "LOGIN": {
+        "LoginPage": "Page de connexion",
+        "LoginDescription": "Connexion ou inscription à partir de cette page pour accéder à votre compte.",
+        "Login": "Connexion",
+        "Email": "Email",
+        "EnterEmail": "Entrer Email",
+        "Password": "Mot de passe",
+        "EnterPassword": "Entrer mot de passe",
+        "ResetPassword": "Oublier mot de passe ?",
+        "Register": "Inscription"
+    },
+    "REGISTER": {
+        "RegisterPage": "Page d'inscription",
+        "RegisterDescription": "Inscription ou connexion à partir de cette page pour accéder à votre compte.",
+        "Register": "Inscription",
+        "Email": "Email",
+        "EnterEmail": "Entrer Email",
+        "Password": "Mot de passe",
+        "EnterPassword": "Entrer mot de passe",
+        "ConfirmPassword": "Confirmer votre mot de passe",
+        "EnterConfirmPassword": "Re-écrire votre Confirm Password"
+    },
+    "PAGENOTFOUND": {
+        "PageNotFound": "Page introuvable",
+        "GoBack": "Retour au dernière page",
+        "GoHome": "Allez au page d'acceuil"
+    },
+    "LISTENOTICES": {
+        "notice": "Remarquer",
+        "noticeyet": "pas encore d'avis ",
+        "Pick": "Choisissez votre casier",
+        "Title": "Titre",
+        "Content": "Contenu",
+        "Delete": "Supprimer",
+        "Links": "Liens",
+        "add": "Ajouter",
+        "addN": "Ajouter un avis",
+        "UpdateN": "Modifier un avis",
+        "modal": "Titre modal",
+        "verfication": "Êtes-vous sûr de supprimer cet avis ??",
+        "closed": "Fermer"
+    },
+    "NOTICEDETAILS": {
+        "Noticed": "Détails de l'avis",
+        "Title": "Titre",
+        "Content": "Contenu",
+        "Links": "Liens",
+        "Delete": "Supprimer",
+        "Copy": "copier un lien",
+        "Modal": "Titre modal",
+        "Verify": "Êtes-vous sûr de supprimer cet avis ??",
+        "Close": "Fermer"
+    },
+    "INFORMATION": {
+        "General": "Informations générales",
+        "Created": "Created By",
+        "Name": "Nom de groupe",
+        "Event": "événement",
+        "NameEV": "Nom",
+        "Class": "Classe",
+        "EventD": "Date de l'événement:",
+        "DateS": "Date de depart:",
+        "Description": "La description",
+        "EventInfo": "Informations sur l'événement",
+        "Phone": "Téléphone",
+        "Email": "E-mail",
+        "EmailV": "Email VALIDE",
+        "EmailN": "Email Non VALIDE",
+        "Web": "Site Internet",
+        "WebV": " Site Internet valide",
+        "WebN": " Site Internet non valide",
+        "Ad": "Addresse",
+        "Edu": "Détails sur l'éducation",
+        "Graduation": "L'obtention du diplôme",
+        "University": "Collège/universitaire",
+        "Degree": "Diplôme/Certification",
+        "Level": "Niveau",
+        "Addition": "Informations supplémentaires"
+
+    },
+    "NOTIFICATION": {
+        "Joining": "Joindre",
+        "Member": "Vous êtes maintenant membre de",
+        "Ready": "Vous êtes déjà membre de ce groupe"
+    },
+    " JOINM": {
+        "New": " Vous ajoutez un nouveau membre dans",
+        "Already": "Vous avez déjà ajouté ce membre avant"
+    },
+    "ADDCHILD": {
+        "Child": "Qui est votre enfant?",
+        "Email": "E-mail ou nom d'utilisateur",
+        "Set": "Ensemble",
+        "Ofchild": "de votre enfant",
+        "User": "Courriel / Nom d'utilisateur",
+        "Who": "Qui êtes vous ?",
+        "Selectc": "Choisissez le pays",
+        "Father ": "Père ",
+        "Mother": "Mère",
+        "Uncle": "Oncle",
+        "Aunt": "Tante",
+        "Setc": "Définir le code envoyé à l'e-mail de votre enfant"
+    },
+    "SPACECHILD": {
+        "Message": "Messages",
+        "Groupes": "Groupes",
+        "Choose": "Choisir :",
+        "His": "Son membre en groupe"
+
+    },
+    "ABOUT": {
+        "About": "À propos",
+        "Aboutm": "À propos de moi",
+        "Personal": "Informations personnelles"
+
+    },
+    "TIMELINE": {
+        "Name": "Nom:",
+        "About": "À propos :",
+        "Share": "Partagez vos idées",
+        "ShareIm": "Partager des images",
+        "Upload": "Télécharger l'image",
+        "Sharea": "Partager",
+        "Public": "Public",
+        "Friends": "Amis",
+        "Juste": "Juste moi",
+        "Config": "Configuration",
+        "Save": "sauvegarder",
+        "Hide": "Cacher",
+        "Report": "rapport",
+        "Min": "Il y a 10 min",
+        "Lorem": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consectetur deserunt illo esse distinctio.",
+        "Loremip": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam est, voluptates officiis iure soluta alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, excepturi. Doloremque, reprehenderit! Quos in maiores, soluta doloremque molestiae reiciendis libero expedita assumenda fuga quae. Consectetur id molestias itaque facere? Hic!",
+        "Like": "Aimer",
+        "Comment": "Commentaire",
+        "Notice": "Liste des avis",
+        "Show": "Montre plus"
+    },
+    "PROFIL": {
+        "Timeline": "Chronologie",
+        "About": "À propos",
+        "Parent": "Parent",
+        "Children": "Enfants"
+
+    },
+    "CHAT": {
+        "Add": "Ajouter une conversation",
+        "Delete": "Supprimer la conversation",
+        "Sure": "Êtes-vous sûr de supprimer la conversation",
+        "Close": "Fermer",
+        "Deleted": "supprimer",
+        "Searchus": "Rechercher un utilisateur",
+        "Search": "chercher:",
+        "Result": "Résultat:",
+        "Full": "Barre latérale plein écran"
+    }
+
+}

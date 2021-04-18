@@ -1,0 +1,188 @@
+{
+    "HOME": {
+        "Welcome": "Welcome to Najehok",
+        "WelcomeDescription": "Make it easy with us",
+        "TitleCardStudent": "For student",
+        "TitleCardTeacher": "For teacher",
+        "TitleCardParent": "For parent"
+    },
+    "NAVBAR": {
+        "Language": "Language:",
+        "Home": "Home",
+        "About": "About",
+        "Notice": "Notice",
+        "Group": "Group",
+        "OwnEvents": "My own Events",
+        "OwnClasses": "My own Classes",
+        "OwnGroup": "My own groups",
+        "ImMember": "I'm a member",
+        "Add": "Add",
+        "Modify": "Modify",
+        "Delete": "Delete",
+        "Classes": "Classes",
+        "Events": "Events",
+        "Groups": "Groups",
+        "ContactUs": "Contact us",
+        "Login": "Login",
+        "Register": "Register",
+        "Profile": "Profile",
+        "Logout": "Logout"
+    },
+    "LOGIN": {
+        "LoginPage": "Login Page",
+        "LoginDescription": "Login or register from here to access.",
+        "Login": "Login",
+        "Email": "Email",
+        "EnterEmail": "Enter Email",
+        "Password": "Password",
+        "EnterPassword": "Enter Password",
+        "ResetPassword": "Forgot Password ?",
+        "Register": "Register"
+    },
+    "REGISTER": {
+        "RegisterPage": "Register Page",
+        "RegisterDescription": "Register or login from here to access.",
+        "Register": "Register",
+        "Email": "Email",
+        "EnterEmail": "Enter Email",
+        "Password": "Password",
+        "EnterPassword": "Enter Password",
+        "ConfirmPassword": "Confirm Password",
+        "EnterConfirmPassword": "Enter Confirm Password"
+    },
+    "PAGENOTFOUND": {
+        "PageNotFound": "Page not found",
+        "GoBack": "Go Back",
+        "GoHome": "Go to home page"
+    },
+    "LISTENOTICES": {
+        "notice": "Notices",
+        "noticeyet": "No Notices yet ",
+        "Pick": "pick your locker side",
+        "Title": "Title",
+        "Content": "Content",
+        "Delete": "Delete",
+        "Links": "Links",
+        "add": "Add",
+        "addN": "Add Notice",
+        "UpdateN": "Update Notice",
+        "modal": "Modal title",
+        "verfication": "Are You sure de delete this notice ??",
+        "closed": "close"
+    },
+    "NOTICEDETAILS": {
+        "Noticed": "Notice details",
+        "Title": "Title",
+        "Content": "Content",
+        "Links": "Links",
+        "Delete": "Delete",
+        "Copy": "Copy Link",
+        "Modal": "Modal title",
+        "Verify": "Are You sure de delete this notice ??",
+        "Close": "Close"
+    },
+    "INFORMATION": {
+        "General": "General Information",
+        "Created": "Created By",
+        "Name": "Group Name",
+        "Event": "Event",
+        "NameEV": "Name",
+        "Class": "Class",
+        "EventD": "Event Date:",
+        "DateS": "Date Start:",
+        "Description": "Description",
+        "EventInfo": "Event Information",
+        "Phone": "Phone",
+        "Email": "E-mail",
+        "EmailV": "Email VALID",
+        "EmailN": "Email Not VALID",
+        "Web": "Website",
+        "WebV": " Website valid",
+        "WebN": " Website not valid",
+        "Ad": "Address",
+        "Edu": "Education Details",
+        "Graduation": "Graduation",
+        "University": "University/College",
+        "Degree": "Degree/Certification",
+        "Level": "Level",
+        "Addition": "Addition Information"
+
+    },
+    "NOTIFICATION": {
+        "Joining": "Joining",
+        "Member": "You are now member in",
+        "Ready": "You are already member in this group"
+    },
+    " JOINM": {
+        "New": " You add new member in",
+        "Already": "You are already add this member before"
+    },
+
+    "ADDCHILD": {
+        "Child": "Who is your Child ?",
+        "Email": "Email or Username",
+        "Set": "Set",
+        "Ofchild": "of your child",
+        "User": "Email / Username",
+        "Who": "Who are you ?",
+        "Selectc": "Select Country",
+        "Father ": "Father ",
+        "Mother": "Mother",
+        "Uncle": "Uncle",
+        "Aunt": "Aunt",
+        "Setc": "Set Code sended to your child's email"
+    },
+    "SPACECHILD": {
+        "Message": "Messages",
+        "Groupes": "Groupes",
+        "Choose": "Choose :",
+        "His": "His/her member in group"
+
+    },
+    "ABOUT": {
+        "About": "About",
+        "Aboutm": "About Me",
+        "Personal": "Personal Info"
+
+    },
+    "TIMELINE": {
+        "Name": "Name :",
+        "About": "About :",
+        "Share": "Share your insights",
+        "ShareIm": "Share Images",
+        "Upload": "Upload image",
+        "Sharea": "Share",
+        "Public": "Public",
+        "Friends": "Friends",
+        "Juste": "Just me",
+        "Config": "Configuration",
+        "Save": "Save",
+        "Hide": "Hide",
+        "Report": "Report",
+        "Min": "10 min ago",
+        "Lorem": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consectetur deserunt illo esse distinctio.",
+        "Loremip": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam est, voluptates officiis iure soluta alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, excepturi. Doloremque, reprehenderit! Quos in maiores, soluta doloremque molestiae reiciendis libero expedita assumenda fuga quae. Consectetur id molestias itaque facere? Hic!",
+        "Like": "Like",
+        "Comment": "Comment",
+        "Notice": "Notice list",
+        "Show": "Show more"
+    },
+    "PROFIL": {
+        "Timeline": "Timeline",
+        "About": "About",
+        "Parent": "Parent",
+        "Children": "Children"
+
+    },
+    "CHAT": {
+        "Add": "Add conversation",
+        "Delete": "Delete conversation",
+        "Sure": "Are you sure to delete conversation",
+        "Close": "Close",
+        "Deleted": "Delete",
+        "Searchus": "Search User",
+        "Search": "Search:",
+        "Result": "Result:",
+        "Full": "Full Screen Sidebar"
+    }
+}

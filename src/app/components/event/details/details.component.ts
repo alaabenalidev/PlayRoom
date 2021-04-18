@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+import { AppConfig } from '../../../config/app.config';
 
 @Component({
   selector: 'app-details',
@@ -6,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  challenge: any;
+  preview:string;
 
-  constructor() { }
+  constructor(private http: Http,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let param = this.activatedRoute.snapshot.params.id_challenge;
+    let challengeId=""
+    for(let i=0;i<24;i++)
+      challengeId+=param[i]
+    console.log(challengeId)
+    console.log(AppConfig.getChallengeUrl + challengeId)
+    this.http.get(AppConfig.getChallengeUrl + challengeId).subscribe(data => {
+      this.challenge = data.json();
+      console.log(this.challenge);
+      /*if(this.challenge.avatar.data){
+      let buff = Buffer.from(this.challenge.file_pdf.data, 'ascii');
+      this.preview = buff.toString('ascii')
+      }*/
+    })
   }
 
 }
