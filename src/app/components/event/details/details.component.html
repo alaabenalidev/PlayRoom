@@ -69,28 +69,13 @@
                   class="qodef-events-single-main-info clearfix qodef-grid-inner"
                 >
                   <div class="qodef-events-single-title-holder qodef-grid-item">
-                    <h2 class="qodef-events-single-title">Rock Climbing</h2>
-                    <span class="qodef-events-single-meta-icon">
-                      <span
-                        class="qodef-icon-elegant-icons icon_clock_alt"
-                      ></span>
-                    </span>
-                    <span class="qodef-events-single-meta-value">
-                      <span class="tribe-event-date-start">
-                        August 10, 2022 @ 8:00 am
-                      </span>
-                      -
-                      <span class="tribe-event-time">5:00 pm</span>
-                    </span>
-                  </div>
-                  <div class="qodef-events-single-cost qodef-grid-item">
-                    <strong>Price:</strong>
-                    $350
-                  </div>
+                    <h2 class="qodef-events-single-title">{{challenge.title}}</h2>
+                  </div>           
                 </div>
                 <div class="qodef-events-single-main-content">
                   <div class="qodef-events-single-content-holder">
                     <p>
+                      <strong>Description :</strong><br/>
                       Te sint tincidunt quo, per appetere inciderint cu,
                       electram corrumpit mei et. Mea ea omnesque dignissim
                       theophrastus, modo alterum honestatis quo id. Vix possit
@@ -101,21 +86,9 @@
                       omnes everti pertinacia ad, stet nonumy nusquam his at. Ei
                       clita saperet mea, qui ipsumen in.
                     </p>
-                    <div class="tribe-events-cal-links">
-                      <a
-                        class="tribe-events-gcal tribe-events-button"
-                        href="https://www.google.com/calendar/event?action=TEMPLATE&amp;text=Rock+Climbing&amp;dates=20220810T080000/20220810T170000&amp;details=Te+sint+tincidunt+quo%2C+per+appetere+inciderint+cu%2C+electram+corrumpit+mei+et.+Mea+ea+omnesque+dignissim+theophrastus%2C+modo+alterum+honestatis+quo+id.+Vix+possit+torquatos+vulputate+ad%2C+et+vix+tota+definitiones.+Ut+dicant+disputationi+vix.+Nullam+tempor+at+vim%2C+usu+eu+denique+hendrerit%2C+impedit+suscipiantur+ex+sit.+Nec+ne+prompta+liberavisse.+Vis+volumus+delectus+electram+ne%2C+eam+omnes+everti+pertinacia+ad%2C+stet+nonumy+nusquam+his+at.+Ei+clita+saperet+mea%2C+qui+ipsumen+in.&amp;location=Kids+room+No.01%2C+2777+Goethals+Rd+N&amp;trp=false&amp;sprop=website:https://playroom.qodeinteractive.com&amp;ctz=Atlantic%2FAzores"
-                        title="Add to Google Calendar"
-                      >
-                        + Google Calendar
-                      </a>
-                      <a
-                        class="tribe-events-ical tribe-events-button"
-                        href="indexedf3.html?ical=1"
-                        title="Download .ics file"
-                      >
-                        + iCal Export
-                      </a>
+                    <div class="qodef-events-single-cost qodef-grid-item">
+                      <strong>Point cadeaux:</strong>
+                      {{ challenge.points_cadeaux}} points
                     </div>
                   </div>
                 </div>

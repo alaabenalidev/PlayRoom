@@ -197,6 +197,35 @@
         </li>
         <li
           [routerLinkActive]="['current-menu-ancestor']"
+          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
+          *ngIf="!isChild && authService.loggedIn()"
+        >
+          <a href="#"><span class="qodef-menu-item-text">Parents Space</span></a>
+          <div class="qodef-drop-down-second">
+            <div class="qodef-drop-down-second-inner">
+              <ul class="sub-menu" >
+                <li
+                  [routerLinkActive]="['current-menu-ancestor']"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
+                >
+                  <a [routerLink]="['/listchild',user._id]">
+                    <span class="qodef-menu-item-text">child List</span>
+                  </a>
+                </li>
+                <li
+                  [routerLinkActive]="['current-menu-ancestor']"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
+                >
+                  <a [routerLink]="['/addchild']">
+                    <span class="qodef-menu-item-text">Add child</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li
+          [routerLinkActive]="['current-menu-ancestor']"
           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4170"
         >
           <a

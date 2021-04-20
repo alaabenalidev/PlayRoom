@@ -1,5 +1,3 @@
-import *  as  citiesCountry from '../../../../assets/json/world_cities_json.json';
-
 import { Component, ElementRef, HostListener, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
@@ -14,16 +12,15 @@ import { ToastrService } from 'ngx-toastr'
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-add-child',
+  templateUrl: './add-child.component.html',
+  styleUrls: ['./add-child.component.css']
 })
-export class RegisterComponent implements OnInit {
-
-  private apiUrl = "https://restcountries.eu/rest/v2/all";
+export class AddChildComponent implements OnInit {
 
   registerForm: FormGroup;
   form: FormGroup;
+  user:any;
   submitted = false;
   countries: any[] = [];
   roles: any[] = [];
@@ -62,23 +59,6 @@ export class RegisterComponent implements OnInit {
     return false;
   }
 
-  addCities(value: string) {
-    let country = this.catchCountry(value)
-    if (country.length >= 0) {
-      this.cities = []
-      citiesCountry['default'].forEach(element => {
-        if (String(element.country) == country && !this.contains(this.cities, String(element.subcountry))) {
-          this.cities.push(element)
-        }
-      });
-      if (!this.f.city)
-        this.f.city.setErrors(null)
-    }
-    else
-      console.log('error to add cities')
-
-  }
-
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
@@ -87,13 +67,12 @@ export class RegisterComponent implements OnInit {
     /** spinner starts on init */
     //this.spinner.show();
     this.currentLanguage = this.translateService.currentLang
-    this.http.get(this.apiUrl).subscribe(countries => {
 
-      countries.json().forEach(element => {
-        this.countries.push(element)
-      });
-
-    });
+    if (this.authService.loggedIn()) {
+      this.authService.getProfile().subscribe(async (profile) => {
+        this.user = await profile.user
+      })
+    }
 
 
     let headers = new Headers();
@@ -115,11 +94,11 @@ export class RegisterComponent implements OnInit {
       gender: ['', [Validators.required]],
       birthday: [null, [Validators.required]],
       city: ['', [Validators.required]],
-      cin:['',Validators.required],
       email: [null, [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       address: ['', Validators.required],
+      ConnectDuration: ['', [Validators.required,Validators.pattern('^[0-9]*$')]],
       codePostal: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
       phoneNumber: [null, Validators.pattern('^[0-9]*$')],
       idRole: ['', Validators.required],
@@ -129,7 +108,8 @@ export class RegisterComponent implements OnInit {
       validator: [this.mustMatch('password', 'confirmPassword'),
       this.emailExist('email'),
       this.phoneNumberExist('phoneNumber'),
-      this.usernameExist('username')
+      this.usernameExist('username'),
+      this.cinExist('cin')
       ]
     });
     //this.spinner.hide();
@@ -260,34 +240,24 @@ export class RegisterComponent implements OnInit {
     }
 
     // display form values on success
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+    //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
     let user = JSON.stringify(this.registerForm.value, null, 4);
-
 
     // Register user
     await this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
+        this.http.post(AppConfig.addStudent, { id_user: data.user._id,ConnectDuration:this.registerForm.get('ConnectDuration').value }).subscribe(data => {
+          if (Boolean(data.json().success))
+            this.router.navigate(['/login']);
+          else
+            console.log('no Student')
+        })
         this.successRegister(this.f.full_name.value);
-        this.roles.forEach(element => {
-          if (element._id == this.f.idRole.value) {
-            if (element.roleName == 'parent') {
-              this.http.post(AppConfig.addParent, { idUser: data.user._id,cin: this.registerForm.get('cin').value,phoneNumber:this.registerForm.get('phoneNumber').value }).subscribe(data => {
-                if (Boolean(data.json().success))
-                  this.router.navigate(['/login']);
-                else
-                  console.log('no Parent')
-              })
-            }
-            else if (element.roleName == 'child') {
-              this.http.post(AppConfig.addStudent, { idUser: data.user._id }).subscribe(data => {
-                if (Boolean(data.json().success))
-                  this.router.navigate(['/login']);
-                else
-                  console.log('no Student')
-              })
-            }
+        this.http.put(AppConfig.addChildToParent,{childId:data.user._id,parentId:this.user._id}).subscribe(data =>{
+          let result = data.json()
+          if(Boolean(result.success)){
+            this.router.navigate(['/listchild']);
           }
-
         })
 
       } else {

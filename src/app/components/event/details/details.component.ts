@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
     console.log(challengeId)
     console.log(AppConfig.getChallengeUrl + challengeId)
     this.http.get(AppConfig.getChallengeUrl + challengeId).subscribe(data => {
-      this.challenge = data.json();
+      this.challenge = data.json().challenge[0];
       console.log(this.challenge);
       /*if(this.challenge.avatar.data){
       let buff = Buffer.from(this.challenge.file_pdf.data, 'ascii');

@@ -26,6 +26,9 @@ import { ParentChildGuard } from './guards/parent-child.guard';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ValidateService } from './services/validate.service';
+import { ParentComponent } from './components/parent/parent.component';
+import { AddChildComponent } from './components/parent/add-child/add-child.component';
+import { ShowHistoryChildComponent } from './components/parent/show-history-child/show-history-child.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { ValidateService } from './services/validate.service';
     FooterComponent,
     HeaderComponent,
     DetailsComponent,
-    RegisterComponent
+    RegisterComponent,
+    ParentComponent,
+    AddChildComponent,
+    ShowHistoryChildComponent
   ],
   imports: [
     BrowserModule,
