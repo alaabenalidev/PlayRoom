@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
           let tab = res.json()
           tab.forEach((element) => {
             if (String(element._id) == String(this.user.role)) {
-              if (String(element.roleName) == 'student') {
+              if (String(element.roleName) == 'child') {
                 this.isChild = true
               } else {
                 this.isParent = true
@@ -47,5 +47,6 @@ export class HeaderComponent implements OnInit {
     this.authService.logout()
     this.isParent=false;
     this.isChild=false;
+    this.router.navigate(['/home']);
   }
 }

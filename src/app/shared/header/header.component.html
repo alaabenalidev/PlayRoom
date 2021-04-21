@@ -15,6 +15,28 @@
       <div
         *ngIf="authService.loggedIn()"
         class="qodef-widget-holder qodef--one"
+        style="margin-right: 30px;"
+      >
+        <div
+          id="playroom_core_icon_list_item-2"
+          class="widget widget_playroom_core_icon_list_item qodef-top-bar-widget"
+        >
+          <div
+            class="qodef-icon-list-item qodef-icon--icon-pack qodef-icon--custom-blob"
+          >
+            <p class="qodef-e-title">
+              <a itemprop="url" [routerLink]="['/login']">
+                <span class="qodef-e-title-inner">
+                  <span class="qodef-e-title-text">{{ user?.full_name }}</span>
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="authService.loggedIn()"
+        class="qodef-widget-holder qodef--one"
       >
         <div
           id="playroom_core_icon_list_item-2"
@@ -198,7 +220,7 @@
         <li
           [routerLinkActive]="['current-menu-ancestor']"
           class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
-          *ngIf="!isChild && authService.loggedIn()"
+          *ngIf="isParent && authService.loggedIn()"
         >
           <a href="#"><span class="qodef-menu-item-text">Parents Space</span></a>
           <div class="qodef-drop-down-second">
@@ -218,6 +240,35 @@
                 >
                   <a [routerLink]="['/addchild']">
                     <span class="qodef-menu-item-text">Add child</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li
+          [routerLinkActive]="['current-menu-ancestor']"
+          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
+          *ngIf="!isParent && authService.loggedIn()"
+        >
+          <a href="#"><span class="qodef-menu-item-text">Livre</span></a>
+          <div class="qodef-drop-down-second">
+            <div class="qodef-drop-down-second-inner">
+              <ul class="sub-menu" >
+                <li
+                  [routerLinkActive]="['current-menu-ancestor']"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
+                >
+                  <a [routerLink]="['/listlivre',user?._id]">
+                    <span class="qodef-menu-item-text">Livre list</span>
+                  </a>
+                </li>
+                <li
+                  [routerLinkActive]="['current-menu-ancestor']"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
+                >
+                  <a [routerLink]="['/addchild']">
+                    <span class="qodef-menu-item-text">Add livre</span>
                   </a>
                 </li>
               </ul>

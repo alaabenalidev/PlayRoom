@@ -5,19 +5,15 @@
     <div class="qodef-m-inner">
       <div class="qodef-m-content qodef-content-grid">
         <h4 class="qodef-m-title entry-title">
-          Event List
+          Child List
         </h4>
         <div itemprop="breadcrumb" class="qodef-breadcrumbs">
-          <a
-            itemprop="url"
-            class="qodef-breadcrumbs-link"
-            href="../index.html"
-          >
+          <a itemprop="url" class="qodef-breadcrumbs-link" href="../index.html">
             <span itemprop="title">Home</span>
           </a>
           <span class="qodef-breadcrumbs-separator"></span>
           <span itemprop="title" class="qodef-breadcrumbs-current">
-            Event List
+            Child List
           </span>
         </div>
       </div>
@@ -43,9 +39,7 @@
                   data-id="1d3194a"
                   data-element_type="section"
                 >
-                  <div
-                    class="elementor-container elementor-column-gap-default"
-                  >
+                  <div class="elementor-container elementor-column-gap-default">
                     <div class="elementor-row">
                       <div
                         class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9b2b8fb"
@@ -80,7 +74,7 @@
                                             >
                                               <img
                                                 loading="lazy"
-                                                src="assets/wp-content/uploads/2020/05/h1-eventlist-img-1-1-800x593.jpg"
+                                                src="assets/img/male_child.png"
                                                 alt="aa"
                                                 width="800"
                                                 height="593"
@@ -141,6 +135,107 @@
                                       </div>
                                     </div>
                                     <div
+                                      *ngFor="let child of list_children"
+                                      class="qodef-e qodef-grid-item qodef-item--custom post-7233 tribe_events type-tribe_events status-publish has-post-thumbnail hentry tribe_events_cat-outdoor cat_outdoor"
+                                    >
+                                      <div class="qodef-e-inner">
+                                        <div class="qodef-event-list-image" *ngIf="child.gender == 'Female'">
+                                          <div class="qodef-e-media-image"  >
+                                            <a
+                                              itemprop="url"
+                                              href="../event/trampolines-6/index.html"
+                                            >
+                                              <img
+                                                loading="lazy"
+                                                src="assets/img/female_child.png"
+                                                alt="a"
+                                                width="800"
+                                                height="593"
+                                              />
+                                            </a>
+                                          </div>
+                                          <div
+                                            class="qodef-event-list-category-thumb"
+                                          >
+                                            <img
+                                              width="60"
+                                              height="60"
+                                              src="assets/wp-content/uploads/2020/08/h1-eventcategory-img-1.png"
+                                              class="attachment-thumbnail size-thumbnail"
+                                              alt="aa"
+                                              loading="lazy"
+                                            />
+                                          </div>
+                                        </div>
+                                        <div class="qodef-event-list-image" *ngIf="child.gender == 'Male'">
+                                          <div class="qodef-e-media-image"  >
+                                            <a
+                                              itemprop="url"
+                                              href="../event/trampolines-6/index.html"
+                                            >
+                                              <img
+                                                loading="lazy"
+                                                src="assets/img/male_child.png"
+                                                alt="a"
+                                                width="800"
+                                                height="593"
+                                              />
+                                            </a>
+                                          </div>
+                                          <div
+                                            class="qodef-event-list-category-thumb"
+                                          >
+                                            <img
+                                              width="60"
+                                              height="60"
+                                              src="assets/wp-content/uploads/2020/08/h1-eventcategory-img-1.png"
+                                              class="attachment-thumbnail size-thumbnail"
+                                              alt="aa"
+                                              loading="lazy"
+                                            />
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="qodef-event-list-content qodef-e-content"
+                                        >
+                                          <span class="qodef-event-list-date">
+                                            {{ child.birthday }}
+                                          </span>
+                                          <h3
+                                            itemprop="name"
+                                            class="qodef-event-list-title entry-title"
+                                          >
+                                            <a
+                                              itemprop="url"
+                                              class="qodef-event-list-title-link"
+                                              href="../event/trampolines-6/index.html"
+                                            >
+                                              {{ child.full_name }}
+                                            </a>
+                                          </h3>
+                                          <div class="qodef-info--bottom">
+                                            <span
+                                              class="qodef-event-list-time"
+                                            >
+                                              {{child.age}} years old
+                                            </span>
+                                            <!-- <div class="qodef-e-info-right">
+                                              <div
+                                                class="qodef-e-info-item qodef-e-info-category"
+                                              >
+                                                <a
+                                                  href="../events/category/toddlers/index.html"
+                                                  rel="tag"
+                                                >
+                                                {{child.age}} years old
+                                                </a>
+                                              </div>
+                                            </div> -->
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
                                       class="qodef-e qodef-grid-item qodef-item--custom post-7233 tribe_events type-tribe_events status-publish has-post-thumbnail hentry tribe_events_cat-outdoor cat_outdoor"
                                     >
                                       <div class="qodef-e-inner">
@@ -191,9 +286,7 @@
                                             </a>
                                           </h3>
                                           <div class="qodef-info--bottom">
-                                            <span
-                                              class="qodef-event-list-time"
-                                            >
+                                            <span class="qodef-event-list-time">
                                               8:00 am - 5:00 pm
                                             </span>
                                             <div class="qodef-e-info-right">
@@ -263,9 +356,7 @@
                                             </a>
                                           </h3>
                                           <div class="qodef-info--bottom">
-                                            <span
-                                              class="qodef-event-list-time"
-                                            >
+                                            <span class="qodef-event-list-time">
                                               12:00 am - 11:59 pm
                                             </span>
                                             <div class="qodef-e-info-right">
@@ -335,9 +426,7 @@
                                             </a>
                                           </h3>
                                           <div class="qodef-info--bottom">
-                                            <span
-                                              class="qodef-event-list-time"
-                                            >
+                                            <span class="qodef-event-list-time">
                                               3:00 pm - 6:00 pm
                                             </span>
                                             <div class="qodef-e-info-right">
@@ -407,9 +496,7 @@
                                             </a>
                                           </h3>
                                           <div class="qodef-info--bottom">
-                                            <span
-                                              class="qodef-event-list-time"
-                                            >
+                                            <span class="qodef-event-list-time">
                                               8:00 am - 5:00 pm
                                             </span>
                                             <div class="qodef-e-info-right">
@@ -479,9 +566,7 @@
                                             </a>
                                           </h3>
                                           <div class="qodef-info--bottom">
-                                            <span
-                                              class="qodef-event-list-time"
-                                            >
+                                            <span class="qodef-event-list-time">
                                               8:00 am - 5:00 pm
                                             </span>
                                             <div class="qodef-e-info-right">
@@ -551,9 +636,7 @@
                                             </a>
                                           </h3>
                                           <div class="qodef-info--bottom">
-                                            <span
-                                              class="qodef-event-list-time"
-                                            >
+                                            <span class="qodef-event-list-time">
                                               1:30 pm - 4:30 pm
                                             </span>
                                             <div class="qodef-e-info-right">
@@ -623,9 +706,7 @@
                                             </a>
                                           </h3>
                                           <div class="qodef-info--bottom">
-                                            <span
-                                              class="qodef-event-list-time"
-                                            >
+                                            <span class="qodef-event-list-time">
                                               4:00 pm - 8:00 pm
                                             </span>
                                             <div class="qodef-e-info-right">
@@ -664,10 +745,7 @@
 </div>
 <div id="qodef-page-content-bottom" style="background: #faf7ef;">
   <div id="qodef-page-content-bottom-inner" class="qodef-content-full-width">
-    <div
-      class="widget widget_playroom_core_button"
-      data-area="content-bottom"
-    >
+    <div class="widget widget_playroom_core_button" data-area="content-bottom">
       <a
         class="qodef-shortcode qodef-m qodef-button qodef-layout--textual qodef-html--link"
         href="../events/month/index.html"
@@ -871,13 +949,7 @@
         />
       </g>
       <g>
-        <ellipse
-          fill="#161616"
-          cx="74.361"
-          cy="38.629"
-          rx="8.779"
-          ry="7.825"
-        />
+        <ellipse fill="#161616" cx="74.361" cy="38.629" rx="8.779" ry="7.825" />
         <ellipse
           fill="#161616"
           cx="74.363"
@@ -1137,8 +1209,8 @@
       <h3 class="qodef-widget-title">First Birthday Party</h3>
       <div class="textwidget">
         <p>
-          Lorem ipsum dolor sit amet, cu dicant admodum vim. Id dicam
-          evertitur pri, duis commodo ornatus eos no.
+          Lorem ipsum dolor sit amet, cu dicant admodum vim. Id dicam evertitur
+          pri, duis commodo ornatus eos no.
         </p>
       </div>
     </div>
@@ -1159,10 +1231,10 @@
   </div>
 </div>
 <div
-class="rbt-toolbar"
-data-theme="Playroom"
-data-featured=""
-data-button-position="30%"
-data-button-horizontal="right"
-data-button-alt="no"
+  class="rbt-toolbar"
+  data-theme="Playroom"
+  data-featured=""
+  data-button-position="30%"
+  data-button-horizontal="right"
+  data-button-alt="no"
 ></div>

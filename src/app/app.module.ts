@@ -2,9 +2,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { Http, HttpModule } from '@angular/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
-import { RouterModule } from "@angular/router";
 
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { AddChildComponent } from './components/parent/add-child/add-child.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './guards/auth.guard';
@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CartComponent } from './components/cart/cart.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { DatePipe } from '@angular/common'
 import { DetailsComponent } from './components/product/details/details.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -23,12 +24,13 @@ import { ListMonthComponent } from './components/event/calendrier/list-month/lis
 import { LoginComponent } from './components/auth/login/login.component';
 import { NgModule } from '@angular/core';
 import { ParentChildGuard } from './guards/parent-child.guard';
+import { ParentComponent } from './components/parent/parent.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { RouterModule } from "@angular/router";
+import { ShowHistoryChildComponent } from './components/parent/show-history-child/show-history-child.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ValidateService } from './services/validate.service';
-import { ParentComponent } from './components/parent/parent.component';
-import { AddChildComponent } from './components/parent/add-child/add-child.component';
-import { ShowHistoryChildComponent } from './components/parent/show-history-child/show-history-child.component';
+import { AddComponent } from './components/livre/add/add.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { ShowHistoryChildComponent } from './components/parent/show-history-chil
     RegisterComponent,
     ParentComponent,
     AddChildComponent,
-    ShowHistoryChildComponent
+    ShowHistoryChildComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,7 @@ import { ShowHistoryChildComponent } from './components/parent/show-history-chil
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard,DatePipe],
   bootstrap: [AppComponent],
   exports: [AppRoutingModule]
 })

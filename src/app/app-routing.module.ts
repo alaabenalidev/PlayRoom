@@ -50,6 +50,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
   },
+  {
+    path: 'listlivre/:id',
+    component: ParentComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ]
