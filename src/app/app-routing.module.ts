@@ -5,7 +5,7 @@ import { AddChildComponent } from './components/parent/add-child/add-child.compo
 import { AuthGuard } from './guards/auth.guard'
 import { AuthLoginRegisterGuard } from './guards/auth-login-register.guard'
 import { CartComponent } from './components/cart/cart.component'
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'
 import { ContactUsComponent } from './components/contact-us/contact-us.component'
 import { DetailsComponent } from './components/event/details/details.component'
 import { HomeComponent } from './components/home/home.component'
@@ -37,15 +37,25 @@ const routes: Routes = [
     canActivate: [AuthLoginRegisterGuard],
     runGuardsAndResolvers: 'always',
   },
-  { path: 'addchild', component: AddChildComponent,canActivate:[AuthGuard] },
+  {
+    path: 'addchild',
+    component: AddChildComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+  },
   { path: 'challenge/:id', component: DetailsComponent },
-  { path: 'listchild/:id', component: ParentComponent },
+  {
+    path: 'listchild/:id',
+    component: ParentComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ]
 
 @NgModule({
-  imports: [CommonModule,RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

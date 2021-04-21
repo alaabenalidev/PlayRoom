@@ -72,6 +72,7 @@ export  const AppConfig: any = {
   deleteMemberFromGroup: baseUrl+'groups/deletemember/',
   sendDemandeJoinGroup: baseUrl+'notifications/demandjoin',
   leftGroup: baseUrl+'groups/leftgroup/',
+  addChild:baseUrl+'childs/addchild',
 
 
   //Post Links

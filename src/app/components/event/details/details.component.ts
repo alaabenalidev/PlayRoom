@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
+
 import { ActivatedRoute } from '@angular/router';
-import { Http } from '@angular/http';
 import { AppConfig } from '../../../config/app.config';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-details',
@@ -16,7 +17,7 @@ export class DetailsComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let param = this.activatedRoute.snapshot.params.id_challenge;
+    let param = this.activatedRoute.snapshot.params.id;
     let challengeId=""
     for(let i=0;i<24;i++)
       challengeId+=param[i]

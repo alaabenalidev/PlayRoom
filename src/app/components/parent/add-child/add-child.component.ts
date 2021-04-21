@@ -6,9 +6,7 @@ import { AppConfig } from '../../../config/app.config';
 import { AuthService } from '../../../services/auth.service';
 //import { FlashMessagesService } from 'angular2-flash-messages';
 import { Http } from '@angular/http';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from "@angular/router";
-import { ToastrService } from 'ngx-toastr'
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -41,22 +39,6 @@ export class AddChildComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private translateService: TranslateService) {
-  }
-
-  catchCountry(country: string) {
-    if (country) {
-      return country
-    }
-    return null
-  }
-
-  contains(cities, obj) {
-    for (var i = 0; i < cities.length; i++) {
-      if (String(cities[i].subcountry) === obj) {
-        return true;
-      }
-    }
-    return false;
   }
 
   // convenience getter for easy access to form fields
@@ -93,47 +75,21 @@ export class AddChildComponent implements OnInit {
       full_name: ['', Validators.required],
       gender: ['', [Validators.required]],
       birthday: [null, [Validators.required]],
-      city: ['', [Validators.required]],
+      city: [this.user?.address.city, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      address: ['', Validators.required],
-      ConnectDuration: ['', [Validators.required,Validators.pattern('^[0-9]*$')]],
-      codePostal: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
-      phoneNumber: [null, Validators.pattern('^[0-9]*$')],
-      idRole: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue],
-
+      address: [this.user?.address.street, Validators.required],
+      ConnectDuration: [5, [Validators.required,Validators.pattern('^[0-9]*$')]],
+      codePostal: [this.user?.address.postalCode, [Validators.required, Validators.pattern('^[0-9]*$')]],
+      idRole: ['6078627b6ba03307fc19b95f', Validators.required],
     }, {
       validator: [this.mustMatch('password', 'confirmPassword'),
       this.emailExist('email'),
-      this.phoneNumberExist('phoneNumber'),
-      this.usernameExist('username'),
-      this.cinExist('cin')
+      this.usernameExist('username')
       ]
     });
     //this.spinner.hide();
-  }
-
-  cinExist(controlName) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-
-      if (control.errors) {
-        // return if another validator has already found an error on the matchingControl
-        return;
-      }
-
-
-      this.http.get(AppConfig.cinExist + control.value).subscribe(data => {
-        if (!Boolean(data.json().success)) {
-          control.setErrors({ cinExist: true })
-          return;
-        }
-        else
-          control.setErrors(null)
-      });
-    }
   }
 
   usernameExist(controlName) {
@@ -175,24 +131,6 @@ export class AddChildComponent implements OnInit {
     }
   }
 
-  phoneNumberExist(controlName) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-
-      if (control.errors) {
-        // return if another validator has already found an error on the matchingControl
-        return;
-      }
-
-      this.http.get(AppConfig.phoneNumberExist + control.value).subscribe(data => {
-        if (!Boolean(data.json().success))
-          control.setErrors({ phoneNumberExist: true })
-        else
-          control.setErrors(null)
-      });
-    }
-  }
-
   mustMatch(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[controlName];
@@ -221,6 +159,7 @@ export class AddChildComponent implements OnInit {
     //this.spinner.show()
     this.submitted = true;
 
+
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return false;
@@ -240,25 +179,25 @@ export class AddChildComponent implements OnInit {
     }
 
     // display form values on success
-    //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
     let user = JSON.stringify(this.registerForm.value, null, 4);
 
     // Register user
     await this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
-        this.http.post(AppConfig.addStudent, { id_user: data.user._id,ConnectDuration:this.registerForm.get('ConnectDuration').value }).subscribe(data => {
-          if (Boolean(data.json().success))
-            this.router.navigate(['/login']);
+        this.http.post(AppConfig.addChild, { id_user: data.user._id,ConnectDuration:this.registerForm.get('ConnectDuration').value }).subscribe(dataC => {
+          if (Boolean(dataC.json().success))
+          this.http.put(AppConfig.addChildToParent,{childId:dataC.json().user.id_user,parentId:this.user._id}).subscribe(data =>{
+            let result = data.json()
+            if(Boolean(result.success)){
+              this.router.navigate(['/listchild'+this.user._id]);
+            }
+          })
           else
             console.log('no Student')
         })
         this.successRegister(this.f.full_name.value);
-        this.http.put(AppConfig.addChildToParent,{childId:data.user._id,parentId:this.user._id}).subscribe(data =>{
-          let result = data.json()
-          if(Boolean(result.success)){
-            this.router.navigate(['/listchild']);
-          }
-        })
+        
 
       } else {
         //this.toastr.error('User existed!','Verify your fields')
