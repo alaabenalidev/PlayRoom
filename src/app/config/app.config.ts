@@ -74,6 +74,10 @@ export  const AppConfig: any = {
   leftGroup: baseUrl+'groups/leftgroup/',
   addChild:baseUrl+'childs/addchild',
 
+  //livre
+  addLivre:baseUrl+'livres/add',
+  getLivreByUserId:baseUrl+'livres/getlivrebyuserid/',
+
 
   //Post Links
   addPost: baseUrl + 'posts/newpost',

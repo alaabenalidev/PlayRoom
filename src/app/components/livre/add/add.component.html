@@ -1,1 +1,672 @@
-<p>add works!</p>
+<div id="qodef-page-outer">
+  <div
+    class="qodef-page-title qodef-m qodef-title--standard-with-breadcrumbs qodef-alignment--left qodef-vertical-alignment--header-bottom"
+  >
+    <div class="qodef-m-inner">
+      <div class="qodef-m-content qodef-content-grid">
+        <h4 class="qodef-m-title entry-title">
+          Add Book
+        </h4>
+        <div itemprop="breadcrumb" class="qodef-breadcrumbs">
+          <a
+            itemprop="url"
+            class="qodef-breadcrumbs-link"
+            href="https://playroom.qodeinteractive.com/"
+          >
+            <span itemprop="title">Home</span>
+          </a>
+          <span class="qodef-breadcrumbs-separator"></span>
+          <span itemprop="title" class="qodef-breadcrumbs-current">
+            Add Book
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="qodef-page-inner" class="qodef-content-grid">
+    <main
+      id="qodef-page-content"
+      class="qodef-grid qodef-layout--template qodef-gutter--large"
+    >
+      <div class="qodef-grid-inner clear">
+        <div class="qodef-grid-item qodef-page-content-section qodef-col--12">
+          <div
+            data-elementor-type="wp-page"
+            data-elementor-id="913"
+            class="elementor elementor-913"
+            data-elementor-settings="[]"
+          >
+            <div class="elementor-inner">
+              <div class="elementor-section-wrap">
+                <section
+                  class="elementor-section elementor-top-section elementor-element elementor-element-4c64dd4c elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+                  data-id="4c64dd4c"
+                  data-element_type="section"
+                >
+                  <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                      <div
+                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e1fc2e3"
+                        data-id="e1fc2e3"
+                        data-element_type="column"
+                      >
+                        <div
+                          class="elementor-column-wrap elementor-element-populated"
+                        >
+                          <div class="elementor-widget-wrap">
+                            <div
+                              class="elementor-element elementor-element-6768d80d elementor-widget elementor-widget-text-editor"
+                              data-id="6768d80d"
+                              data-element_type="widget"
+                              data-widget_type="text-editor.default"
+                            >
+                              <div class="elementor-widget-container">
+                                <div
+                                  class="elementor-text-editor elementor-clearfix"
+                                >
+                                  <div class="woocommerce">
+                                    <div
+                                      class="woocommerce-notices-wrapper"
+                                    ></div>
+                                    <h2>Add Child</h2>
+                                    <form
+                                      [formGroup]="registerForm"
+                                      enctype="multipart/form-data"
+                                      (submit)="onRegisterSubmit()"
+                                      class="woocommerce-form woocommerce-form-login login"
+                                    >
+                                      <p
+                                        class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+                                      >
+                                        <label for="fullName">
+                                          Title&nbsp;
+                                          <span class="required">*</span>
+                                        </label>
+                                        <input
+                                          type="text"
+                                          class="woocommerce-Input woocommerce-Input--text input-text"
+                                          formControlName="title"
+                                          placeholder="Full Name"
+                                          value=""
+                                        />
+                                      </p>
+                                      <div
+                                        *ngIf="submitted && f.title.errors"
+                                        class="invalid-feedback"
+                                      >
+                                        <div *ngIf="f.title.errors.required">
+                                          Title is required
+                                        </div>
+                                      </div>
+                                      <p
+                                        class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+                                      >
+                                        <label for="fullName">
+                                          Description&nbsp;
+                                          <span class="required">*</span>
+                                        </label>
+                                        <textarea
+                                          rows="10"
+                                          type="text"
+                                          class="woocommerce-Input woocommerce-Input--text input-text"
+                                          formControlName="description"
+                                          placeholder="Full Name"
+                                          value=""
+                                        ></textarea>
+                                      </p>
+                                      <div
+                                        *ngIf="
+                                          submitted && f.description.errors
+                                        "
+                                        class="invalid-feedback"
+                                      >
+                                        <div
+                                          *ngIf="f.description.errors.required"
+                                        >
+                                          Description is required
+                                        </div>
+                                      </div>
+                                      <p
+                                        class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+                                      >
+                                        <label for="fullName">
+                                          Author&nbsp;
+                                          <span class="required">*</span>
+                                        </label>
+                                        <input
+                                          type="text"
+                                          class="woocommerce-Input woocommerce-Input--text input-text"
+                                          formControlName="auteur"
+                                          placeholder="Full Name"
+                                          value=""
+                                        />
+                                      </p>
+                                      <div
+                                        *ngIf="submitted && f.auteur.errors"
+                                        class="invalid-feedback"
+                                      >
+                                        <div *ngIf="f.auteur.errors.required">
+                                          Author is required
+                                        </div>
+                                      </div>
+                                      <p
+                                        class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+                                      >
+                                        <label for="fullName">
+                                          Language&nbsp;
+                                          <span class="required">*</span>
+                                        </label>
+                                        <input
+                                          type="text"
+                                          class="woocommerce-Input woocommerce-Input--text input-text"
+                                          formControlName="language"
+                                          placeholder="Full Name"
+                                          value=""
+                                        />
+                                      </p>
+                                      <div
+                                        *ngIf="submitted && f.language.errors"
+                                        class="invalid-feedback"
+                                      >
+                                        <div *ngIf="f.language.errors.required">
+                                          Language is required
+                                        </div>
+                                      </div>
+                                      <p
+                                        class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+                                      >
+                                        <label for="fullName">
+                                          File PDF&nbsp;
+                                          <span class="required">*</span>
+                                        </label>
+                                        <input
+                                          type="file"
+                                          accept="application/pdf"
+                                          (change)="fileChangeEvent($event)"
+                                          class="woocommerce-Input woocommerce-Input--text input-text"
+                                          formControlName="file_pdf"
+                                          placeholder="Full Name"
+                                          value=""
+                                        />
+                                      </p>
+                                      <div
+                                        *ngIf="submitted && f.file_pdf.errors"
+                                        class="invalid-feedback"
+                                      >
+                                        <div *ngIf="f.file_pdf.errors.required">
+                                          File PDF is required
+                                        </div>
+                                      </div>
+                                      <p
+                                        class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+                                      >
+                                        <label for="fullName">
+                                          Video&nbsp;
+                                          <span class="required">*</span>
+                                        </label>
+                                        <input
+                                          type="text"
+                                          class="woocommerce-Input woocommerce-Input--text input-text"
+                                          formControlName="video"
+                                          placeholder="Full Name"
+                                          value=""
+                                        />
+                                      </p>
+                                      <div
+                                        *ngIf="submitted && f.video.errors"
+                                        class="invalid-feedback"
+                                      >
+                                        <div *ngIf="f.video.errors.required">
+                                          Video not valid
+                                        </div>
+                                      </div>
+                                      <div class="form-group m-1">
+                                        <label>Quiz list :</label>
+                                      </div>
+                                      <table class="table table-striped m-1">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Quiz</th>
+                                            <th scope="col">delete</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr
+                                            *ngFor="
+                                              let quiz of listQuiz;
+                                              index as i
+                                            "
+                                            style="cursor: pointer;"
+                                          >
+                                            <th scope="row">
+                                              {{ quiz.question }}
+                                            </th>
+                                            <td>
+                                              <i
+                                                (click)="removeQuiz(i)"
+                                                class="fas fa-times"
+                                                style="
+                                                  color: red;
+                                                  cursor: pointer;
+                                                "
+                                              ></i>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <p
+                                        class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide"
+                                      >
+                                        <label for="fullName">
+                                          Adding Quiz&nbsp;
+                                          <span class="required">*</span>
+                                        </label>
+                                      </p>
+                                      <div class="form-group m-1">
+                                        <label>Quiz :</label>
+                                        <input
+                                          [(ngModel)]="question_quiz"
+                                          [ngModelOptions]="{
+                                            standalone: true
+                                          }"
+                                          type="text"
+                                          placeholder="question"
+                                          class="form-control"
+                                        />
+                                        <label>1st response :</label>
+                                        <input
+                                          [(ngModel)]="res__quiz1"
+                                          [ngModelOptions]="{
+                                            standalone: true
+                                          }"
+                                          type="text"
+                                          placeholder="res 1"
+                                          class="form-control"
+                                        />
+                                        <label>Second response :</label>
+                                        <input
+                                          [(ngModel)]="res__quiz2"
+                                          [ngModelOptions]="{
+                                            standalone: true
+                                          }"
+                                          type="text"
+                                          placeholder="res 2"
+                                          class="form-control"
+                                        />
+                                        <label>3rd response :</label>
+                                        <input
+                                          [(ngModel)]="res__quiz3"
+                                          [ngModelOptions]="{
+                                            standalone: true
+                                          }"
+                                          type="text"
+                                          placeholder="res 3"
+                                          class="form-control"
+                                        />
+                                        <label>Correct Response :</label>
+                                        <input
+                                          type="radio"
+                                          placeholder="question"
+                                          [(ngModel)]="correct_quiz"
+                                          [ngModelOptions]="{
+                                            standalone: true
+                                          }"
+                                          name="correct_quiz"
+                                          value="1"
+                                          class="form-control"
+                                        />
+                                        Rep 1
+                                        <input
+                                          type="radio"
+                                          placeholder="question"
+                                          [(ngModel)]="correct_quiz"
+                                          [ngModelOptions]="{
+                                            standalone: true
+                                          }"
+                                          name="correct_quiz"
+                                          value="2"
+                                          class="form-control"
+                                        />
+                                        Rep 2
+                                        <input
+                                          type="radio"
+                                          placeholder="question"
+                                          [(ngModel)]="correct_quiz"
+                                          [ngModelOptions]="{
+                                            standalone: true
+                                          }"
+                                          name="correct_quiz"
+                                          value="3"
+                                          class="form-control"
+                                        />
+                                        Rep 3
+                                      </div>
+                                      <div
+                                        class="modal-footer justify-content-center"
+                                      >
+                                        <button
+                                          type="button"
+                                          class="btn btn-secondary"
+                                        >
+                                          Cancel
+                                        </button>
+                                        <button
+                                          type="button"
+                                          class="btn btn-success"
+                                          (click)="addQuiz()"
+                                        >
+                                          Add
+                                        </button>
+                                      </div>
+                                      <p class="form-row">
+                                        <button
+                                          type="submit"
+                                          class="woocommerce-button button woocommerce-form-login__submit"
+                                          name="login"
+                                          value="Log in"
+                                        >
+                                          Register
+                                        </button>
+                                      </p>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div id="qodef-page-content-bottom" style="background: #faf7ef;">
+  <div id="qodef-page-content-bottom-inner" class="qodef-content-full-width">
+    <div class="widget widget_playroom_core_button" data-area="content-bottom">
+      <a
+        class="qodef-shortcode qodef-m qodef-button qodef-layout--textual qodef-html--link"
+        href="https://playroom.qodeinteractive.com/events/month/"
+        target="_self"
+        style="font-size: 15px;"
+      >
+        <span class="qodef-m-text">Find events</span>
+        <span class="qodef-m-icon">
+          <span class="qodef-icon-font-awesome fas fa-angle-right"></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+<a id="qodef-back-to-top" href="#">
+  <span class="qodef-back-to-top-icon">
+    <svg
+      class="qodef-back-to-top-svg"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      width="103.25px"
+      height="72.125px"
+      viewBox="0 0 103.25 72.125"
+      enable-background="new 0 0 103.25 72.125"
+      xml:space="preserve"
+    >
+      <g>
+        <polygon
+          fill="#FFFFFF"
+          points="56.486,28.886 61.611,24.741 64.045,34.75 	"
+        />
+        <path
+          fill="#FFFFFF"
+          d="M18.617,2.628c0,0-28.809,4.953-13.674,22.856c15.14,17.9,36.5,3.168,44.676,4.683c14.893,2.752,20.186-14.302,16.117-18.453C60.607,6.48,57.92-3.158,18.617,2.628z"
+        />
+      </g>
+      <g class="upper-right-leg">
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="81.332"
+          y1="44.458"
+          x2="92.63"
+          y2="36.823"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="92.676"
+          y1="37.545"
+          x2="87.746"
+          y2="28.043"
+        />
+        <ellipse
+          transform="matrix(0.5555 0.8315 -0.8315 0.5555 61.7243 -61.8084)"
+          fill="#161616"
+          cx="88.676"
+          cy="26.831"
+          rx="1.089"
+          ry="2.064"
+        />
+      </g>
+      <g class="upper-left-leg">
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="67.115"
+          y1="46.672"
+          x2="56.589"
+          y2="38.005"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="55.919"
+          y1="38.354"
+          x2="60.375"
+          y2="28.622"
+        />
+        <ellipse
+          transform="matrix(0.5982 -0.8013 0.8013 0.5982 2.0942 58.7666)"
+          fill="#161616"
+          cx="59.649"
+          cy="27.295"
+          rx="1.089"
+          ry="2.063"
+        />
+      </g>
+      <g class="bottom-legs">
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="63.542"
+          y1="50.811"
+          x2="52.618"
+          y2="58.971"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="52.629"
+          y1="58.238"
+          x2="57.322"
+          y2="67.857"
+        />
+        <ellipse
+          transform="matrix(-0.7389 -0.6739 0.6739 -0.7389 52.2275 158.9084)"
+          fill="#161616"
+          cx="56.904"
+          cy="69.334"
+          rx="1.089"
+          ry="2.064"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="63.768"
+          y1="49.895"
+          x2="50.169"
+          y2="50.893"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="50.571"
+          y1="50.281"
+          x2="49.35"
+          y2="60.915"
+        />
+        <ellipse
+          transform="matrix(-0.0569 -0.9984 0.9984 -0.0569 -10.6124 113.3027)"
+          fill="#161616"
+          cx="48.207"
+          cy="61.664"
+          rx="1.089"
+          ry="2.064"
+        />
+      </g>
+      <g class="bottom-legs alter">
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="85.826"
+          y1="51.083"
+          x2="96.75"
+          y2="59.243"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="96.74"
+          y1="58.51"
+          x2="92.047"
+          y2="68.13"
+        />
+        <ellipse
+          transform="matrix(-0.7393 0.6734 -0.6734 -0.7393 207.7037 58.7902)"
+          fill="#161616"
+          cx="92.471"
+          cy="69.603"
+          rx="1.089"
+          ry="2.065"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="85.668"
+          y1="48.434"
+          x2="99.145"
+          y2="50.51"
+        />
+        <line
+          fill="none"
+          stroke="#161616"
+          stroke-miterlimit="10"
+          x1="98.791"
+          y1="49.868"
+          x2="99.163"
+          y2="60.564"
+        />
+        <ellipse
+          transform="matrix(0.0171 0.9999 -0.9999 0.0171 159.6318 -40.6706)"
+          fill="#161616"
+          cx="100.501"
+          cy="60.854"
+          rx="1.088"
+          ry="2.064"
+        />
+      </g>
+      <g>
+        <ellipse fill="#161616" cx="74.361" cy="38.629" rx="8.779" ry="7.825" />
+        <ellipse
+          fill="#161616"
+          cx="74.363"
+          cy="49.518"
+          rx="12.453"
+          ry="11.102"
+        />
+        <polygon
+          fill="#FFFFFF"
+          points="70.273,43.223 72.104,43.452 70.781,46.585 	"
+        />
+        <polygon
+          fill="#FFFFFF"
+          points="77.852,41.914 79.282,40.859 80.436,43.927 	"
+        />
+        <path
+          fill="none"
+          stroke="#EA703E"
+          stroke-width="0.75"
+          stroke-miterlimit="10"
+          d="M69.439,42.684c0,0,3.414,2.041,6.533,0.444c3.118-1.597,4.344-3.601,4.418-4.158"
+        />
+        <ellipse
+          transform="matrix(-0.1053 -0.9944 0.9944 -0.1053 51.524 117.9213)"
+          fill="#FFFFFF"
+          stroke="#EA703E"
+          stroke-width="0.75"
+          stroke-miterlimit="10"
+          cx="78.809"
+          cy="35.783"
+          rx="2.856"
+          ry="3.187"
+        />
+        <ellipse
+          transform="matrix(-0.5517 -0.834 0.834 -0.5517 76.9059 115.233)"
+          fill="#FFFFFF"
+          stroke="#EA703E"
+          stroke-width="0.75"
+          stroke-miterlimit="10"
+          cx="69.422"
+          cy="36.948"
+          rx="3.048"
+          ry="3.779"
+        />
+        <ellipse
+          transform="matrix(-0.1055 -0.9944 0.9944 -0.1055 51.9875 118.1499)"
+          fill="#2E2A2C"
+          cx="79.134"
+          cy="35.693"
+          rx="0.861"
+          ry="0.875"
+        />
+        <ellipse
+          transform="matrix(-0.1056 -0.9944 0.9944 -0.1056 39.6994 109.6864)"
+          fill="#2E2A2C"
+          cx="69.179"
+          cy="36.989"
+          rx="0.86"
+          ry="0.875"
+        />
+      </g>
+    </svg>
+  </span>
+  <span class="qodef-back-to-top-text">
+    Back To Top
+  </span>
+</a>
+
+<div
+  class="rbt-toolbar"
+  data-theme="Playroom"
+  data-featured=""
+  data-button-position="30%"
+  data-button-horizontal="right"
+  data-button-alt="no"
+></div>

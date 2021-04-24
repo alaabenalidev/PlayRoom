@@ -190,7 +190,7 @@ export class AddChildComponent implements OnInit {
           this.http.put(AppConfig.addChildToParent,{childId:dataC.json().user.id_user,parentId:this.user._id}).subscribe(data =>{
             let result = data.json()
             if(Boolean(result.success)){
-              this.router.navigate(['/listchild'+this.user._id]);
+              this.router.navigate(['/listchild/'+this.user._id]);
             }
           })
           else

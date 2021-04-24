@@ -31,6 +31,7 @@ import { ShowHistoryChildComponent } from './components/parent/show-history-chil
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ValidateService } from './services/validate.service';
 import { AddComponent } from './components/livre/add/add.component';
+import { ListlivreComponent } from './components/livre/listlivre/listlivre.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AddComponent } from './components/livre/add/add.component';
     ParentComponent,
     AddChildComponent,
     ShowHistoryChildComponent,
-    AddComponent
+    AddComponent,
+    ListlivreComponent
   ],
   imports: [
     BrowserModule,
