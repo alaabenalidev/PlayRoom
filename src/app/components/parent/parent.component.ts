@@ -1,11 +1,9 @@
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { AppConfig } from '../../config/app.config';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatePipe } from '@angular/common'
 import { Http } from '@angular/http';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-parent',
@@ -30,10 +28,8 @@ export class ParentComponent implements OnInit {
   list_children: Array<any> = []
   selectedChild: any
 
-  constructor(private authService: AuthService, private router: Router,
-    private activatedRoute: ActivatedRoute,
+  constructor(private authService: AuthService,
     private http: Http,
-    private spinner: NgxSpinnerService,
     private datepipe: DatePipe) { }
 
   ngOnInit(): void {

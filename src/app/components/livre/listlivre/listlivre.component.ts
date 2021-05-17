@@ -21,15 +21,8 @@ export class ListlivreComponent implements OnInit {
         console.log(res)
         res.livre.forEach(async livre => {
           let createdAt = await this.datepipe.transform(livre.createdAt, 'dd MMMM, yyyy');
-          this.list_livre.push({title:livre.title,auteur:livre.auteur,createdAt:createdAt,language:livre.language})
+          this.list_livre.push({id:livre._id,title:livre.title,auteur:livre.auteur,createdAt:createdAt,language:livre.language})
         });
-        console.log(this.list_livre)
-        // res.parent.children_list.forEach(async user => {
-        //   let birthday = await this.datepipe.transform(user.child.birthday, 'dd MMMM, yyyy');
-        //   var timeDiff = Math.abs(Date.now() - new Date(user.child.birthday).getTime());
-        //   let age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
-        //   this.list_children.push({ childId: user.child._id, username: user.child.username, gender: user.child.gender, full_name: user.child.full_name, birthday: birthday, age: age})
-        // });
       })
   }
 

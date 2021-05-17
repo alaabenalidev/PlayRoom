@@ -222,15 +222,17 @@
           class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
           *ngIf="isParent && authService.loggedIn()"
         >
-          <a href="#"><span class="qodef-menu-item-text">Parents Space</span></a>
+          <a href="#">
+            <span class="qodef-menu-item-text">Parents Space</span>
+          </a>
           <div class="qodef-drop-down-second">
             <div class="qodef-drop-down-second-inner">
-              <ul class="sub-menu" >
+              <ul class="sub-menu">
                 <li
                   [routerLinkActive]="['current-menu-ancestor']"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
                 >
-                  <a [routerLink]="['/listchild',user?._id]">
+                  <a [routerLink]="['/listchild', user?._id]">
                     <span class="qodef-menu-item-text">child List</span>
                   </a>
                 </li>
@@ -254,12 +256,12 @@
           <a href="#"><span class="qodef-menu-item-text">Livre</span></a>
           <div class="qodef-drop-down-second">
             <div class="qodef-drop-down-second-inner">
-              <ul class="sub-menu" >
+              <ul class="sub-menu">
                 <li
                   [routerLinkActive]="['current-menu-ancestor']"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
                 >
-                  <a [routerLink]="['/listlivre',user?._id]">
+                  <a [routerLink]="['/listlivre']">
                     <span class="qodef-menu-item-text">Livre list</span>
                   </a>
                 </li>
@@ -267,7 +269,7 @@
                   [routerLinkActive]="['current-menu-ancestor']"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
                 >
-                  <a [routerLink]="['/addchild']">
+                  <a [routerLink]="['/addlivre']">
                     <span class="qodef-menu-item-text">Add livre</span>
                   </a>
                 </li>
@@ -361,55 +363,7 @@
           </span>
         </a>
       </div>
-      <div
-        id="playroom_core_woo_dropdown_cart-2"
-        class="widget widget_playroom_core_woo_dropdown_cart qodef-header-widget-area-one"
-        data-area="header-widget-one"
-      >
-        <div
-          class="qodef-woo-dropdown-cart qodef-m"
-          style="padding: 0px 9px 0px 0px;"
-        >
-          <div class="qodef-woo-dropdown-cart-inner qodef-m-inner">
-            <a
-              itemprop="url"
-              class="qodef-m-opener"
-              href="https://playroom.qodeinteractive.com/cart/"
-            >
-              <span class="qodef-m-opener-icon">
-                <span class="qodef-icon-elegant-icons icon_cart_alt"></span>
-              </span>
-              <span class="qodef-m-opener-count">0</span>
-            </a>
-            <div class="qodef-m-dropdown">
-              <div class="qodef-m-dropdown-inner">
-                <p class="qodef-m-posts-not-found qodef-grid-item">
-                  No products in the cart.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        id="playroom_core_side_area_opener-2"
-        class="widget widget_playroom_core_side_area_opener qodef-header-widget-area-one"
-        data-area="header-widget-one"
-      >
-        <a
-          href="javascript:void(0)"
-          class="qodef-opener-icon qodef-m qodef-source--predefined qodef-side-area-opener"
-          style="color: #444444;"
-        >
-          <span class="qodef-m-icon qodef--open">
-            <span class="qodef-m-dots">
-              <span class="qodef-m-dot qodef--1"></span>
-              <span class="qodef-m-dot qodef--2"></span>
-              <span class="qodef-m-dot qodef--3"></span>
-            </span>
-          </span>
-        </a>
-      </div>
+      
     </div>
   </div>
   <div class="qodef-header-sticky qodef-custom-header-layout">
@@ -488,75 +442,15 @@
           </li>
         </ul>
       </nav>
-      <form
-        action="https://playroom.qodeinteractive.com/"
-        class="qodef-search-cover-form"
-        method="get"
-      >
-        <div class="qodef-m-inner">
-          <input
-            type="text"
-            placeholder="Search here..."
-            name="s"
-            class="qodef-m-form-field"
-            autocomplete="off"
-            required
-          />
-          <a
-            href="javascript:void(0)"
-            class="qodef-opener-icon qodef-m qodef-source--svg-path qodef-m-close"
-          >
-            <span class="qodef-m-icon qodef--open">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                width="14.75px"
-                height="15.719px"
-                viewBox="0 0 14.75 15.719"
-                enable-background="new 0 0 14.75 15.719"
-                xml:space="preserve"
-              >
-                <line
-                  fill="none"
-                  stroke="#444444"
-                  stroke-width="4"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  x1="12.672"
-                  y1="13.379"
-                  x2="1.969"
-                  y2="2.676"
-                />
-                <line
-                  fill="none"
-                  stroke="#444444"
-                  stroke-width="4"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  x1="1.969"
-                  y1="13.379"
-                  x2="12.672"
-                  y2="2.676"
-                />
-              </svg>
-            </span>
-          </a>
-        </div>
-      </form>
     </div>
   </div>
-  <form
-    action="https://playroom.qodeinteractive.com/"
-    class="qodef-search-cover-form"
-    method="get"
-  >
+  <form class="qodef-search-cover-form" (submit)="search()">
     <div class="qodef-m-inner">
       <input
         type="text"
         placeholder="Search here..."
-        name="s"
+        [(ngModel)]="searchText"
+        [ngModelOptions]="{ standalone: true }"
         class="qodef-m-form-field"
         autocomplete="off"
         required

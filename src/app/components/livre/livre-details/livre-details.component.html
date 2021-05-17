@@ -1,0 +1,83 @@
+<div id="qodef-page-outer">
+  <h1>{{ livre?.title }}</h1>
+
+  <table>
+    <tr>
+      <td><h3>Description:</h3></td>
+      <td>
+        <p>{{ livre?.description }}</p>
+      </td>
+    </tr>
+    <tr>
+      <td><h3>Language:</h3></td>
+      <td>
+        <p>{{ livre?.language }}</p>
+      </td>
+    </tr>
+    <tr>
+      <td><h3>Created By :</h3></td>
+      <td>
+        <p>{{ livre?.child_id.full_name }}</p>
+      </td>
+    </tr>
+    <tr>
+      <td><h3>Created At :</h3></td>
+      <td>
+        <p>{{ livre?.createdAt }}</p>
+      </td>
+    </tr>
+    <tr>
+      <td><h3>Writer :</h3></td>
+      <td>
+        <p>{{ livre?.auteur }}</p>
+      </td>
+    </tr>
+    <tr>
+      <td><h3>Views :</h3></td>
+      <td>
+        <p>{{ livre?.views }}</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;"><h3>Content :</h3></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; max-width: 350px;">
+        <h5>Video:</h5>
+        <iframe
+          *ngIf="livre?.video"
+          width="750px"
+          height="750px"
+          style="max-width: 50%; max-height: 315px;"
+          [src]="livre?.video | safe: 'resourceUrl'"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </td>
+      <td style="padding: 10px;">
+        <h5>File:</h5>
+        <button *ngIf="livre?.file_pdf" type="submit">Open PDF</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;"><h3>Questions :</h3></td>
+    </tr>
+    <ng-container *ngFor="let question of livre?.quizs;index as i">
+      <tr>
+        <td colspan="2">
+          <h5 style="text-align: center;">{{ question.question }}</h5>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div *ngFor="let sugg of livre?.quizs[i].suggestion">
+            <input type="radio" value="{{ sugg }}" />{{sugg}}
+          </div>
+        </td>
+      </tr>
+    </ng-container>
+    <tr>
+        <td colspan="2" style="text-align: center;"><button type="submit">Validé</button></td>
+      </tr>
+  </table>
+</div>

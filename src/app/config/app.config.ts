@@ -21,7 +21,6 @@ export  const AppConfig: any = {
   resendeUrl: baseUrl+'users/resend',
   resendUrl: baseUrl+'users/resend',
   profileUrl: baseUrl+'users/profile',
-  getChallengeUrl: baseUrl+'challenges/getchallengebyid/',
   getUserById: baseUrl+'users/findbyid/',
   getprofileUrl: baseUrl+'users/profile/',
   getUserByEmailOrUsername: baseUrl+'users/findbyemailorusername/',
@@ -76,8 +75,15 @@ export  const AppConfig: any = {
 
   //livre
   addLivre:baseUrl+'livres/add',
+  getLivreById:baseUrl+'livres/getlivrebyid/',
   getLivreByUserId:baseUrl+'livres/getlivrebyuserid/',
+  getLivresSearch:baseUrl+'livres/search/',
 
+  //challenge
+  getChallenges: baseUrl+'challenges/',
+  getChallengeUrl: baseUrl+'challenges/getchallengebyid/',
+  getChallengeSearch:baseUrl+'challenges/search/',
+  participate: baseUrl+'challenges/addparticipant',
 
   //Post Links
   addPost: baseUrl + 'posts/newpost',

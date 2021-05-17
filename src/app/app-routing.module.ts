@@ -13,10 +13,12 @@ import { HomeComponent } from './components/home/home.component'
 import { ListComponent as ListEventComponent } from './components/event/list/list.component'
 import { ListComponent as ListProductComponent } from './components/product/list/list.component'
 import { ListlivreComponent } from './components/livre/listlivre/listlivre.component'
+import { LivreDetailsComponent } from './components/livre/livre-details/livre-details.component';
 import { LoginComponent } from './components/auth/login/login.component'
 import { NgModule } from '@angular/core'
 import { ParentComponent } from './components/parent/parent.component'
 import { RegisterComponent } from './components/auth/register/register.component'
+import { SearchComponent } from './components/search/search.component'
 import { ListComponent as listCalendrierComponent } from './components/event/calendrier/list/list.component'
 
 const routes: Routes = [
@@ -52,6 +54,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
   },
   { path: 'challenge/:id', component: DetailsComponent },
+  { path: 'book/:id', component: LivreDetailsComponent },
   {
     path: 'listchild/:id',
     component: ParentComponent,
@@ -69,6 +72,10 @@ const routes: Routes = [
     component: ParentComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'search/:search',
+    component: SearchComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },

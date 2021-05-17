@@ -4,9 +4,9 @@
   >
     <div class="qodef-m-inner">
       <div class="qodef-m-content qodef-content-grid">
-        <h4 class="qodef-m-title entry-title">
+        <!-- <h4 class="qodef-m-title entry-title">
           Rock Climbing
-        </h4>
+        </h4> -->
         <div itemprop="breadcrumb" class="qodef-breadcrumbs">
           <a
             itemprop="url"
@@ -39,56 +39,32 @@
             data-featured=""
           >
             <div class="tribe-events-before-html"></div>
-            
+
             <div
               id="tribe-events-content"
               class="tribe-events-single qodef-tribe-events-single"
             >
               <div class="qodef-grid qodef-layout--columns qodef-col-num--2">
-                <div class="qodef-events-single-featured-image">
-                  <div class="tribe-events-event-image">
-                    <img
-                      width="1300"
-                      height="524"
-                      src="assets/wp-content/uploads/2020/05/event-img-6-1.jpg"
-                      class="attachment-full size-full wp-post-image"
-                      alt="a"
-                      loading="lazy"
-                      srcset="
-                        https://playroom.qodeinteractive.com/wp-content/uploads/2020/05/event-img-6-1.jpg          1300w,
-                        https://playroom.qodeinteractive.com/wp-content/uploads/2020/05/event-img-6-1-600x242.jpg   600w,
-                        https://playroom.qodeinteractive.com/wp-content/uploads/2020/05/event-img-6-1-300x121.jpg   300w,
-                        https://playroom.qodeinteractive.com/wp-content/uploads/2020/05/event-img-6-1-1024x413.jpg 1024w,
-                        https://playroom.qodeinteractive.com/wp-content/uploads/2020/05/event-img-6-1-768x310.jpg   768w
-                      "
-                      sizes="(max-width: 1300px) 100vw, 1300px"
-                    />
-                  </div>
-                </div>
+                <!--   -->
                 <div
                   class="qodef-events-single-main-info clearfix qodef-grid-inner"
                 >
                   <div class="qodef-events-single-title-holder qodef-grid-item">
-                    <h2 class="qodef-events-single-title">{{challenge?.title}}</h2>
-                  </div>           
+                    <h2 class="qodef-events-single-title">
+                      {{ challenge?.title }}
+                    </h2>
+                  </div>
                 </div>
                 <div class="qodef-events-single-main-content">
                   <div class="qodef-events-single-content-holder">
                     <p>
-                      <strong>Description :</strong><br/>
-                      Te sint tincidunt quo, per appetere inciderint cu,
-                      electram corrumpit mei et. Mea ea omnesque dignissim
-                      theophrastus, modo alterum honestatis quo id. Vix possit
-                      torquatos vulputate ad, et vix tota definitiones. Ut
-                      dicant disputationi vix. Nullam tempor at vim, usu eu
-                      denique hendrerit, impedit suscipiantur ex sit. Nec ne
-                      prompta liberavisse. Vis volumus delectus electram ne, eam
-                      omnes everti pertinacia ad, stet nonumy nusquam his at. Ei
-                      clita saperet mea, qui ipsumen in.
+                      <strong>Description :</strong>
+                      <br />
+                      {{ challenge?.description }}
                     </p>
                     <div class="qodef-events-single-cost qodef-grid-item">
                       <strong>Point cadeaux:</strong>
-                      {{ challenge?.points_cadeaux}} points
+                      {{ challenge?.points_cadeaux }} points
                     </div>
                   </div>
                 </div>
@@ -108,13 +84,26 @@
                                 ></span>
                               </span>
                               <span class="qodef-events-single-meta-label">
-                                <strong>Date:</strong>
+                                <strong>Date Start:</strong>
                               </span>
                               <span class="qodef-events-single-meta-value">
-                                10 Aug
+                                {{ challenge?.createdAt }}
                               </span>
                             </div>
                             <div class="qodef-events-single-meta-item">
+                              <span class="qodef-events-single-meta-icon">
+                                <span
+                                  class="qodef-icon-elegant-icons icon_table"
+                                ></span>
+                              </span>
+                              <span class="qodef-events-single-meta-label">
+                                <strong>Date End:</strong>
+                              </span>
+                              <span class="qodef-events-single-meta-value">
+                                {{ challenge?.date_fin }}
+                              </span>
+                            </div>
+                            <!-- <div class="qodef-events-single-meta-item">
                               <span class="qodef-events-single-meta-icon">
                                 <span
                                   class="qodef-icon-elegant-icons icon_clock_alt"
@@ -126,8 +115,8 @@
                               <span class="qodef-events-single-meta-value">
                                 8:00 am - 5:00 pm
                               </span>
-                            </div>
-                            <div class="qodef-events-single-meta-item">
+                            </div> -->
+                            <!-- <div class="qodef-events-single-meta-item">
                               <span class="qodef-events-single-meta-icon">
                                 <span
                                   class="qodef-icon-elegant-icons icon_building"
@@ -139,7 +128,7 @@
                               <span class="qodef-events-single-meta-value">
                                 Kids room No.01
                               </span>
-                            </div>
+                            </div> -->
                             <div class="qodef-events-single-meta-item">
                               <span class="qodef-events-single-meta-icon">
                                 <span
@@ -147,15 +136,10 @@
                                 ></span>
                               </span>
                               <span class="qodef-events-single-meta-label">
-                                <strong>Address:</strong>
+                                <strong>Livres:</strong>
                               </span>
                               <span class="qodef-events-single-meta-value">
-                                <a
-                                  href="https://www.google.com/maps/search/?api=1&amp;query=2777%20Goethals%20Rd%20N"
-                                  target="_blank"
-                                >
-                                  2777 Goethals Rd N
-                                </a>
+                                {{ challenge?.list_livre.length }}
                               </span>
                             </div>
                           </div>
@@ -170,10 +154,10 @@
                                 <strong>Organizer Name:</strong>
                               </span>
                               <span class="qodef-events-single-meta-value">
-                                Jon &#038; Natasha Shade
+                                Administrator
                               </span>
                             </div>
-                            <div class="qodef-events-single-meta-item">
+                            <!-- <div class="qodef-events-single-meta-item">
                               <span class="qodef-events-single-meta-icon">
                                 <span
                                   class="qodef-icon-elegant-icons icon_mobile"
@@ -205,27 +189,51 @@
                                   https://qodeinteractive.com/
                                 </a>
                               </span>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>
-                      <div
-                        class="qodef-events-single-map qodef-grid-item qodef-col--4"
-                      >
-                        <div class="tribe-events-venue-map">
-                          <iframe
-                            width="100%"
-                            height="350px"
-                            frameborder="0"
-                            style="border: 0;"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDNsicAsP6-VuGtAb1O9riI3oc_NOb7IOU&amp;q=2777+Goethals+Rd+N+"
-                            allowfullscreen
-                          ></iframe>
+                      <ng-container *ngIf="authService.loggedIn()">
+                        <div
+                          class="qodef-events-single-map qodef-grid-item qodef-col--4"
+                          *ngIf="participated"
+                        >
+                          <div class="tribe-events-venue-map">
+                            <h3>Your Book to upload:</h3>
+                            <select [(ngModel)]="book">
+                              <option
+                                *ngFor="let book of list_livre"
+                                value="{{ book._id }}"
+                              >
+                                {{ book.title }}
+                              </option>
+                            </select>
+                            <br/>
+                            <button
+                              type="submit"
+                              class="woocommerce-button button woocommerce-form-login__submit"
+                              (click)="participate()"
+                            >
+                              Participate
+                            </button>
+                            <br/>
+                            <br/>
+                          </div>
                         </div>
-                      </div>
+                        <div
+                          class="qodef-events-single-map qodef-grid-item qodef-col--4"
+                          *ngIf="!participated"
+                        >
+                          <div class="tribe-events-venue-map">
+                            <h3>Your are allready participated to this challenge !</h3>
+                            <br/>
+                            <br/>
+                          </div>
+                        </div>
+                      </ng-container>
                     </div>
                   </div>
-                  <div
+                  <!-- <div
                     class="qodef-events-single-navigation-holder qodef-grid qodef-layout--columns qodef-col-num--2 clearfix"
                   >
                     <div class="qodef-grid-inner">
@@ -258,7 +266,7 @@
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
