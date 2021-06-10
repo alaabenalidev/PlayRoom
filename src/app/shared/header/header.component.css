@@ -1,0 +1,20 @@
+.languages-list {
+    width: auto;
+    display: inline-block;
+    margin-right: 35px;
+}
+
+.languages-list .title {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.flag-img {
+    height: 15px;
+    margin: 5px;
+}
+
+.flag-img:hover {
+    cursor: pointer;
+}

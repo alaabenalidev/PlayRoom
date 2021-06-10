@@ -19,6 +19,7 @@ import { NgModule } from '@angular/core'
 import { ParentComponent } from './components/parent/parent.component'
 import { RegisterComponent } from './components/auth/register/register.component'
 import { SearchComponent } from './components/search/search.component'
+import { ShowHistoryChildComponent } from './components/parent/show-history-child/show-history-child.component';
 import { ListComponent as listCalendrierComponent } from './components/event/calendrier/list/list.component'
 
 const routes: Routes = [
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'search/:search',
     component: SearchComponent
+  },
+  {
+    path: 'parent/:idParent/historychild/:idChild',
+    component: ShowHistoryChildComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' },

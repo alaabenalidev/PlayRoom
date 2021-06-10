@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private http: Http,
+    public translate: TranslateService,
     public authService: AuthService,
     private router: Router,
     private Globals: Globals,
@@ -29,12 +30,11 @@ export class HeaderComponent implements OnInit {
     if (this.authService.loggedIn()) {
       this.authService.getProfile().subscribe(async (profile) => {
         this.user = await profile.user
-        console.log(this.user)
         this.http.get(AppConfig.getALLRolles).subscribe((res) => {
           let tab = res.json()
           tab.forEach((element) => {
             if (String(element._id) == String(this.user.role)) {
-              if (String(element.roleName) == 'child') {
+              if (String(element.roleName) == 'hild') {
                 this.isChild = true
               } else {
                 this.isParent = true

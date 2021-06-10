@@ -55,32 +55,6 @@
         "GoBack": "Retour au dernière page",
         "GoHome": "Allez au page d'acceuil"
     },
-    "LISTENOTICES": {
-        "notice": "Remarquer",
-        "noticeyet": "pas encore d'avis ",
-        "Pick": "Choisissez votre casier",
-        "Title": "Titre",
-        "Content": "Contenu",
-        "Delete": "Supprimer",
-        "Links": "Liens",
-        "add": "Ajouter",
-        "addN": "Ajouter un avis",
-        "UpdateN": "Modifier un avis",
-        "modal": "Titre modal",
-        "verfication": "Êtes-vous sûr de supprimer cet avis ??",
-        "closed": "Fermer"
-    },
-    "NOTICEDETAILS": {
-        "Noticed": "Détails de l'avis",
-        "Title": "Titre",
-        "Content": "Contenu",
-        "Links": "Liens",
-        "Delete": "Supprimer",
-        "Copy": "copier un lien",
-        "Modal": "Titre modal",
-        "Verify": "Êtes-vous sûr de supprimer cet avis ??",
-        "Close": "Fermer"
-    },
     "INFORMATION": {
         "General": "Informations générales",
         "Created": "Created By",
@@ -107,11 +81,6 @@
         "Level": "Niveau",
         "Addition": "Informations supplémentaires"
 
-    },
-    "NOTIFICATION": {
-        "Joining": "Joindre",
-        "Member": "Vous êtes maintenant membre de",
-        "Ready": "Vous êtes déjà membre de ce groupe"
     },
     " JOINM": {
         "New": " Vous ajoutez un nouveau membre dans",
@@ -172,17 +141,5 @@
         "Parent": "Parent",
         "Children": "Enfants"
 
-    },
-    "CHAT": {
-        "Add": "Ajouter une conversation",
-        "Delete": "Supprimer la conversation",
-        "Sure": "Êtes-vous sûr de supprimer la conversation",
-        "Close": "Fermer",
-        "Deleted": "supprimer",
-        "Searchus": "Rechercher un utilisateur",
-        "Search": "chercher:",
-        "Result": "Résultat:",
-        "Full": "Barre latérale plein écran"
     }
-
 }

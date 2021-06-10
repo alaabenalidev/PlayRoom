@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
         });
       } else {
         //this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 5000});
+        alert('Plz verify your identity!')
         this.router.navigate(['login']);
       }
     }

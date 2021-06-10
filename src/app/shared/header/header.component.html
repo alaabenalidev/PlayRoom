@@ -12,6 +12,24 @@
       </div>
     </div>
     <div class="qodef-widget-holder qodef-top-area-right">
+      <div class="languages-list">
+        <span>{{ 'NAVBAR.Language' | translate }}</span>
+        <img
+          class="flag-img"
+          src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg"
+          (click)="translate.use('ar')"
+        />
+        <img
+          class="flag-img"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1920px-Flag_of_the_United_Kingdom.svg.png"
+          (click)="translate.use('en')"
+        />
+        <img
+          class="flag-img"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1920px-Flag_of_France.svg.png"
+          (click)="translate.use('fr')"
+        />
+      </div>
       <div
         *ngIf="authService.loggedIn()"
         class="qodef-widget-holder qodef--one"
@@ -105,7 +123,9 @@
                   >
                     <i class="fas fa-sign-in-alt"></i>
                   </span>
-                  <span class="qodef-e-title-text">Login</span>
+                  <span class="qodef-e-title-text">
+                    {{ 'NAVBAR.Login' | translate }}
+                  </span>
                 </span>
               </a>
             </p>
@@ -139,7 +159,9 @@
                   >
                     <i class="fas fa-user-plus"></i>
                   </span>
-                  <span class="qodef-e-title-text">Register</span>
+                  <span class="qodef-e-title-text">
+                    {{ 'NAVBAR.Register' | translate }}
+                  </span>
                 </span>
               </a>
             </p>
@@ -194,14 +216,20 @@
           class="menu-item menu-item-type-custom menu-item-object-custom current-menu-parent menu-item-has-children menu-item-766"
         >
           <a [routerLink]="['/home']">
-            <span class="qodef-menu-item-text">Home</span>
+            <span class="qodef-menu-item-text">
+              {{ 'NAVBAR.Home' | translate }}
+            </span>
           </a>
         </li>
         <li
           [routerLinkActive]="['current-menu-ancestor']"
           class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
         >
-          <a href="#"><span class="qodef-menu-item-text">Events</span></a>
+          <a href="#">
+            <span class="qodef-menu-item-text">
+              {{ 'NAVBAR.Events' | translate }}
+            </span>
+          </a>
           <div class="qodef-drop-down-second">
             <div class="qodef-drop-down-second-inner">
               <ul class="sub-menu">
@@ -210,44 +238,53 @@
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
                 >
                   <a [routerLink]="['/list-event']">
-                    <span class="qodef-menu-item-text">Event List</span>
+                    <span class="qodef-menu-item-text">
+                      {{ 'NAVBAR.Events' | translate }} List
+                    </span>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
         </li>
-        <li
-          [routerLinkActive]="['current-menu-ancestor']"
-          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
-          *ngIf="isParent && authService.loggedIn()"
-        >
-          <a href="#">
-            <span class="qodef-menu-item-text">Parents Space</span>
-          </a>
-          <div class="qodef-drop-down-second">
-            <div class="qodef-drop-down-second-inner">
-              <ul class="sub-menu">
-                <li
-                  [routerLinkActive]="['current-menu-ancestor']"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
-                >
-                  <a [routerLink]="['/listchild', user?._id]">
-                    <span class="qodef-menu-item-text">child List</span>
-                  </a>
-                </li>
-                <li
-                  [routerLinkActive]="['current-menu-ancestor']"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
-                >
-                  <a [routerLink]="['/addchild']">
-                    <span class="qodef-menu-item-text">Add child</span>
-                  </a>
-                </li>
-              </ul>
+        <ng-container *ngIf="!isChild && authService.loggedIn()">
+          <li
+            [routerLinkActive]="['current-menu-ancestor']"
+            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-249 qodef-menu-item--narrow"
+            
+          >
+            <a href="#">
+              <span class="qodef-menu-item-text">Parents Space</span>
+            </a>
+            <div class="qodef-drop-down-second">
+              <div class="qodef-drop-down-second-inner">
+                <ul class="sub-menu">
+                  <li
+                    [routerLinkActive]="['current-menu-ancestor']"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
+                  >
+                    <a [routerLink]="['/listchild', user?._id]">
+                      <span class="qodef-menu-item-text">
+                        {{ 'ADDCHILD.Child' | translate }} List
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    [routerLinkActive]="['current-menu-ancestor']"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
+                  >
+                    <a [routerLink]="['/addchild']">
+                      <span class="qodef-menu-item-text">
+                        {{ 'NAVBAR.Add' | translate }}
+                        {{ 'ADDCHILD.Child' | translate }}
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        </ng-container>
         <li
           [routerLinkActive]="['current-menu-ancestor']"
           class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
@@ -285,7 +322,9 @@
             [routerLinkActive]="['current-menu-ancestor']"
             [routerLink]="['/aboutus']"
           >
-            <span class="qodef-menu-item-text">About Us</span>
+            <span class="qodef-menu-item-text">
+              {{ 'NAVBAR.About' | translate }}
+            </span>
           </a>
         </li>
         <li
@@ -296,7 +335,9 @@
             [routerLinkActive]="['current-menu-ancestor']"
             [routerLink]="['/contactus']"
           >
-            <span class="qodef-menu-item-text">Contact Us</span>
+            <span class="qodef-menu-item-text">
+              {{ 'NAVBAR.ContactUs' | translate }}
+            </span>
           </a>
         </li>
       </ul>
@@ -363,87 +404,9 @@
           </span>
         </a>
       </div>
-      
     </div>
   </div>
-  <div class="qodef-header-sticky qodef-custom-header-layout">
-    <div class="qodef-header-sticky-inner">
-      <a
-        itemprop="url"
-        class="qodef-header-logo-link qodef-height--set"
-        href="https://playroom.qodeinteractive.com/"
-        style="height: 87px;"
-        rel="home"
-      >
-        <img
-          width="320"
-          height="138"
-          src="https://playroom.qodeinteractive.com/wp-content/uploads/2020/08/logo-sticky.png"
-          class="qodef-header-logo-image qodef--sticky"
-          alt="logo sticky"
-          loading="lazy"
-        />
-      </a>
-      <nav
-        class="qodef-header-navigation"
-        role="navigation"
-        aria-label="Top Menu"
-      >
-        <ul id="menu-main-menu-1" class="menu">
-          <li
-            [routerLinkActive]="['current-menu-ancestor']"
-            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-parent menu-item-has-children menu-item-766"
-          >
-            <a [routerLink]="['/home']">
-              <span class="qodef-menu-item-text">Home</span>
-            </a>
-          </li>
-          <li
-            [routerLinkActive]="['current-menu-ancestor']"
-            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-251 qodef-menu-item--narrow"
-          >
-            <a href="#"><span class="qodef-menu-item-text">Events</span></a>
-            <div class="qodef-drop-down-second">
-              <div class="qodef-drop-down-second-inner">
-                <ul class="sub-menu">
-                  <li
-                    [routerLinkActive]="['current-menu-ancestor']"
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8307"
-                  >
-                    <a [routerLink]="['/list-event']">
-                      <span class="qodef-menu-item-text">Event List</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          <li
-            [routerLinkActive]="['current-menu-ancestor']"
-            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4170"
-          >
-            <a
-              [routerLinkActive]="['current-menu-ancestor']"
-              [routerLink]="['/aboutus']"
-            >
-              <span class="qodef-menu-item-text">About Us</span>
-            </a>
-          </li>
-          <li
-            [routerLinkActive]="['current-menu-ancestor']"
-            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4170"
-          >
-            <a
-              [routerLinkActive]="['current-menu-ancestor']"
-              [routerLink]="['/contactus']"
-            >
-              <span class="qodef-menu-item-text">Contact Us</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+
   <form class="qodef-search-cover-form" (submit)="search()">
     <div class="qodef-m-inner">
       <input
@@ -552,7 +515,9 @@
           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4170"
         >
           <a [routerLink]="['/home']">
-            <span class="qodef-menu-item-text">Home</span>
+            <span class="qodef-menu-item-text">
+              {{ 'NAVBAR.Home' | translate }}
+            </span>
           </a>
         </li>
         <li
@@ -566,7 +531,9 @@
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3944"
                 >
                   <a href="https://playroom.qodeinteractive.com/about-us/">
-                    <span class="qodef-menu-item-text">About Us</span>
+                    <span class="qodef-menu-item-text">
+                      {{ 'NAVBAR.About' | translate }}
+                    </span>
                   </a>
                 </li>
               </ul>

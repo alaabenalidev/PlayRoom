@@ -81,6 +81,7 @@ export  const AppConfig: any = {
 
   //challenge
   getChallenges: baseUrl+'challenges/',
+  getChallengeParticipationChild: baseUrl+'challenges/participated/',
   getChallengeUrl: baseUrl+'challenges/getchallengebyid/',
   getChallengeSearch:baseUrl+'challenges/search/',
   participate: baseUrl+'challenges/addparticipant',

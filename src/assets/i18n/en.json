@@ -55,32 +55,6 @@
         "GoBack": "Go Back",
         "GoHome": "Go to home page"
     },
-    "LISTENOTICES": {
-        "notice": "Notices",
-        "noticeyet": "No Notices yet ",
-        "Pick": "pick your locker side",
-        "Title": "Title",
-        "Content": "Content",
-        "Delete": "Delete",
-        "Links": "Links",
-        "add": "Add",
-        "addN": "Add Notice",
-        "UpdateN": "Update Notice",
-        "modal": "Modal title",
-        "verfication": "Are You sure de delete this notice ??",
-        "closed": "close"
-    },
-    "NOTICEDETAILS": {
-        "Noticed": "Notice details",
-        "Title": "Title",
-        "Content": "Content",
-        "Links": "Links",
-        "Delete": "Delete",
-        "Copy": "Copy Link",
-        "Modal": "Modal title",
-        "Verify": "Are You sure de delete this notice ??",
-        "Close": "Close"
-    },
     "INFORMATION": {
         "General": "General Information",
         "Created": "Created By",
@@ -107,11 +81,6 @@
         "Level": "Level",
         "Addition": "Addition Information"
 
-    },
-    "NOTIFICATION": {
-        "Joining": "Joining",
-        "Member": "You are now member in",
-        "Ready": "You are already member in this group"
     },
     " JOINM": {
         "New": " You add new member in",
@@ -172,17 +141,5 @@
         "About": "About",
         "Parent": "Parent",
         "Children": "Children"
-
-    },
-    "CHAT": {
-        "Add": "Add conversation",
-        "Delete": "Delete conversation",
-        "Sure": "Are you sure to delete conversation",
-        "Close": "Close",
-        "Deleted": "Delete",
-        "Searchus": "Search User",
-        "Search": "Search:",
-        "Result": "Result:",
-        "Full": "Full Screen Sidebar"
     }
 }

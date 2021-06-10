@@ -101,7 +101,6 @@ export class RegisterComponent implements OnInit {
     this.http.get(AppConfig.getALLRolles)
       .subscribe(res => {
         let tab = res.json()
-        console.log(tab);
         tab.forEach(element => {
           if (String(element.admin) == 'false') {
             this.roles.push(element)

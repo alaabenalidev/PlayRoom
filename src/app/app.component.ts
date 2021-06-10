@@ -5,7 +5,7 @@ import { NavigationEnd, Router } from '@angular/router'
 import { AppConfig } from './config/app.config'
 import { AuthService } from './services/auth.service'
 import { HttpParams } from '@angular/common/http'
-import { TranslateService } from '@ngx-translate/core'
+import { TranslateService } from '@ngx-translate/core';
 import { element } from 'protractor'
 
 @Component({
