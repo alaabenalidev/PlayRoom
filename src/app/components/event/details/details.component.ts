@@ -14,12 +14,13 @@ import { Http } from '@angular/http'
 export class DetailsComponent implements OnInit {
   challenge: any
   participated:Boolean=false
+  isParent: Boolean = false
+  
   async loadLivres(idUser) {
     await this.http
       .get(AppConfig.getLivreByUserId + idUser)
       .subscribe((data) => {
         let res = data.json()
-        console.log(res)
         res.livre.forEach(async (livre) => {
           let createdAt = await this.datepipe.transform(
             livre.createdAt,
@@ -93,6 +94,24 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  isparent(){
+    if (this.authService.loggedIn()) {
+      this.authService.getProfile().subscribe(async (profile) => {
+        let user = await profile.user
+        this.http.get(AppConfig.getALLRolles).subscribe((res) => {
+          let tab = res.json()
+          tab.forEach((element) => {
+            if (String(element._id) == String(user.role)) {
+              if (String(element.roleName) == "parent") {
+                this.isParent = true
+              }
+            }
+          })
+        })
+      })
+    }
+  }
+
   ngOnInit(): void {
     this.loadChallenge()
     if (this.authService.loggedIn()) {
@@ -101,5 +120,6 @@ export class DetailsComponent implements OnInit {
         this.loadLivres(this.user._id)
       })
     }
+    this.isparent();
   }
 }

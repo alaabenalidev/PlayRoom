@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
           let tab = res.json()
           tab.forEach((element) => {
             if (String(element._id) == String(this.user.role)) {
-              if (String(element.roleName) == 'hild') {
+              if (String(element.roleName) == 'child') {
                 this.isChild = true
               } else {
                 this.isParent = true

@@ -95,6 +95,6 @@ export class ShowHistoryChildComponent implements OnInit {
   async ngOnInit() {
     await this.loadLivres(this.childId)
     await this.loadChallenge(this.childId)
-    console.log(this.list_challenges)
+    
   }
 }

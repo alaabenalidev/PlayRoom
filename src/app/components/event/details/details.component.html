@@ -208,7 +208,7 @@
                                 {{ book.title }}
                               </option>
                             </select>
-                            <br/>
+                            <br />
                             <button
                               type="submit"
                               class="woocommerce-button button woocommerce-form-login__submit"
@@ -216,20 +216,36 @@
                             >
                               Participate
                             </button>
-                            <br/>
-                            <br/>
+                            <br />
+                            <br />
                           </div>
                         </div>
-                        <div
-                          class="qodef-events-single-map qodef-grid-item qodef-col--4"
-                          *ngIf="!participated"
-                        >
-                          <div class="tribe-events-venue-map">
-                            <h3>Your are allready participated to this challenge !</h3>
-                            <br/>
-                            <br/>
+                        <ng-container *ngIf="!participated && !isParent">
+                          <div
+                            class="qodef-events-single-map qodef-grid-item qodef-col--4"
+                          >
+                            <div class="tribe-events-venue-map">
+                              <h3>
+                                You are already participated to this challenge !
+                              </h3>
+                              <br />
+                              <br />
+                            </div>
                           </div>
-                        </div>
+                        </ng-container>
+                        <ng-container *ngIf="isParent">
+                          <div
+                            class="qodef-events-single-map qodef-grid-item qodef-col--4"
+                          >
+                            <div class="tribe-events-venue-map">
+                              <h3>
+                                You cannot participate because you're parent !
+                              </h3>
+                              <br />
+                              <br />
+                            </div>
+                          </div>
+                        </ng-container>
                       </ng-container>
                     </div>
                   </div>

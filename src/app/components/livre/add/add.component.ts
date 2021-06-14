@@ -129,10 +129,10 @@ export class AddComponent implements OnInit {
     this.submitted = true
 
     // display form values on success
-    alert(
-      'SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4),
-    )
-    let livre = JSON.stringify(this.registerForm.value, null, 4)
+    // alert(
+    //   'SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4),
+    // )
+    // let livre = JSON.stringify(this.registerForm.value, null, 4)
 
     this.http.post(AppConfig.addLivre, this.registerForm.value).subscribe((data) => {
       if (data.json().success)
