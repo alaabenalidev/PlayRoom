@@ -26,7 +26,8 @@
         "Login": "Connexion",
         "Register": "Inscription",
         "Profile": "Profile",
-        "Logout": "Déconnexion"
+        "Logout": "Déconnexion",
+        "ParentSpace":"Espace Parent"
     },
     "LOGIN": {
         "LoginPage": "Page de connexion",
@@ -87,7 +88,8 @@
         "Already": "Vous avez déjà ajouté ce membre avant"
     },
     "ADDCHILD": {
-        "Child": "Qui est votre enfant?",
+        "Child": "Enfants",
+        "list_child":"Liste des enfants",
         "Email": "E-mail ou nom d'utilisateur",
         "Set": "Ensemble",
         "Ofchild": "de votre enfant",

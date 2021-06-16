@@ -26,7 +26,8 @@
         "Login": "Login",
         "Register": "Register",
         "Profile": "Profile",
-        "Logout": "Logout"
+        "Logout": "Logout",
+        "ParentSpace":"Parent space"
     },
     "LOGIN": {
         "LoginPage": "Login Page",
@@ -88,7 +89,8 @@
     },
 
     "ADDCHILD": {
-        "Child": "Who is your Child ?",
+        "Child": "Child",
+        "list_child":"List childs",
         "Email": "Email or Username",
         "Set": "Set",
         "Ofchild": "of your child",

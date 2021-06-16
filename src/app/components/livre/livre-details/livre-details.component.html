@@ -112,7 +112,7 @@
         </td>
       </tr>
     </ng-container>
-    <tr>
+    <tr *ngIf="!isParent">
       <td colspan="2" style="text-align: center;">
         <button type="submit" (click)="verifyQuiz()">Valider</button>
       </td>

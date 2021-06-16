@@ -29,6 +29,7 @@ export class LivreDetailsComponent implements OnInit, PipeTransform {
   correctAnswers: Array<any> = []
   answers: Array<any> = []
   isSuccess: Boolean = false
+  isParent=false
 
   async loadLivre(idLivre) {
     await this.http
@@ -118,6 +119,18 @@ export class LivreDetailsComponent implements OnInit, PipeTransform {
     if (this.authService.loggedIn()) {
       this.authService.getProfile().subscribe(async (profile) => {
         this.user = await profile.user
+        this.http.get(AppConfig.getALLRolles).subscribe((res) => {
+          let tab = res.json()
+          tab.forEach((element) => {
+            if (String(element._id) == String(this.user.role)) {
+              if (String(element.roleName) == 'child') {
+                this.isParent = false
+              } else {
+                this.isParent = true
+              }
+            }
+          })
+        })
       })
     }
     let idBook = this.activatedRoute.snapshot.params.id
